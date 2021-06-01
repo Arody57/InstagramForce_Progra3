@@ -70,6 +70,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Arbol AVL\ArbolAVL.cs" />
+    <Compile Include="Clases\Arbol AVL\Nodo.cs" />
+    <Compile Include="Clases\Arbol AVL\NodoAvl.cs" />
+    <Compile Include="Clases\Lista doblemente enlazada\ListaDoble.cs" />
+    <Compile Include="Clases\Lista doblemente enlazada\NodoDoble.cs" />
+    <Compile Include="Clases\Tablas Hash\DispersionHash.cs" />
+    <Compile Include="Clases\Tablas Hash\Lista.cs" />
+    <Compile Include="Clases\Tablas Hash\Nodo.cs" />
     <Compile Include="instagramHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,5 +158,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
