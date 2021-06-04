@@ -107,7 +107,6 @@ namespace instagramforce
             {
                 pathImagenProfileUser = "imageDefaultProfile.png";
             }
-            string path = Directory.GetCurrentDirectory();
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string FileName = string.Format("{0}Resources\\userData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
 
