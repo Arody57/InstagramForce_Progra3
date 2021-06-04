@@ -22,7 +22,7 @@ namespace instagramforce.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace instagramforce.Properties {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("instagramforce.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace instagramforce.Properties {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace instagramforce.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _9c35cddcf5ccaa1218b7b739eb309426 {
+        public static System.Drawing.Bitmap _9c35cddcf5ccaa1218b7b739eb309426 {
             get {
                 object obj = ResourceManager.GetObject("9c35cddcf5ccaa1218b7b739eb309426", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,10 +73,33 @@ namespace instagramforce.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap instagramLogin {
+        public static System.Drawing.Bitmap instagramLogin {
             get {
                 object obj = ResourceManager.GetObject("instagramLogin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;USERDATA&gt;
+        ///  &lt;USER ID=&quot;8375737871000000&quot;&gt;
+        ///    &lt;USERNAME&gt;SKING&lt;/USERNAME&gt;
+        ///    &lt;FULLNAME&gt;Steven King&lt;/FULLNAME&gt;
+        ///    &lt;PROFILEIMAGE&gt;C:\Twitter\ICON\SKING.jpg&lt;/PROFILEIMAGE&gt;
+        ///    &lt;BIRTHDATE&gt;2003/06/17 00:00:00&lt;/BIRTHDATE&gt;
+        ///  &lt;/USER&gt;
+        ///  &lt;USER ID=&quot;7875796772726582&quot;&gt;
+        ///    &lt;USERNAME&gt;NKOCHHAR&lt;/USERNAME&gt;
+        ///    &lt;FULLNAME&gt;Neena Kochhar&lt;/FULLNAME&gt;
+        ///    &lt;PROFILEIMAGE&gt;C:\Twitter\ICON\NKOCHHAR.jpg&lt;/PROFILEIMAGE&gt;
+        ///    &lt;BIRTHDATE&gt;2005/09/21 00:00:00&lt;/BIRTHDATE&gt;
+        ///  &lt;/USER&gt;
+        ///  &lt;USER ID=&quot;7668697265657800&quot;&gt;
+        ///    &lt;USERNAME&gt;LDEH [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        public static string UserData {
+            get {
+                return ResourceManager.GetString("UserData", resourceCulture);
             }
         }
     }

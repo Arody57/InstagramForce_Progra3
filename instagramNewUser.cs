@@ -107,15 +107,18 @@ namespace instagramforce
             {
                 pathImagenProfileUser = "imageDefaultProfile.png";
             }
+            string path = Directory.GetCurrentDirectory();
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\userData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
 
-            if (File.Exists("E:\\Proyectos\\C#\\Proyecto Final Progra III\\InstagramForce_Progra3\\Contenido xml\\XmlUsuario.xml"))
+            if (File.Exists(FileName))
             {
-                xml_acciones.Añadir_usuario("E:\\Proyectos\\C#\\Proyecto Final Progra III\\InstagramForce_Progra3\\Contenido xml\\XmlUsuario.xml", nickNameUser, nameRealUser, passwordUser, dateOfBirthUser, pathImagenProfileUser);
+                xml_acciones.Añadir_usuario(FileName, nickNameUser, nameRealUser, passwordUser, dateOfBirthUser, pathImagenProfileUser);
             }
             else
             {
-                xml_acciones.crearXml("E:\\Proyectos\\C#\\Proyecto Final Progra III\\InstagramForce_Progra3\\Contenido xml\\XmlUsuario.xml", "Usuarios");
-                xml_acciones.Añadir_usuario("E:\\Proyectos\\C#\\Proyecto Final Progra III\\InstagramForce_Progra3\\Contenido xml\\XmlUsuario.xml", nickNameUser, nameRealUser, passwordUser, dateOfBirthUser, pathImagenProfileUser);
+                xml_acciones.crearXml(FileName, "Usuarios");
+                xml_acciones.Añadir_usuario(FileName, nickNameUser, nameRealUser, passwordUser, dateOfBirthUser, pathImagenProfileUser);
             }
 
 

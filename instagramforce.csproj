@@ -120,7 +120,7 @@
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -161,6 +161,23 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\FollowerFollowingData.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserData.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FeedData.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\data.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\UserData.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
