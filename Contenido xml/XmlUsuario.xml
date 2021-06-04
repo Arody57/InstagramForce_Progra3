@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Usuarios>
+  <Usuarios>
+    <NickName>Prueva1</NickName>
+    <NameUser>User1</NameUser>
+    <Password>123</Password>
+    <DateOfBirth>2021-01-04</DateOfBirth>
+    <PathImagenProfile>imageDefaultProfile.png</PathImagenProfile>
+  </Usuarios>
+  <Usuarios>
+    <NickName>User2</NickName>
+    <NameUser>Prueva2</NameUser>
+    <Password>1234</Password>
+    <DateOfBirth>2021-04-25</DateOfBirth>
+    <PathImagenProfile>imageDefaultProfile.png</PathImagenProfile>
+  </Usuarios>
+  <Usuarios>
+    <NickName>Prueva 3</NickName>
+    <NameUser>User3</NameUser>
+    <Password>12345</Password>
+    <DateOfBirth>2021-06-04</DateOfBirth>
+    <PathImagenProfile>imageDefaultProfile.png</PathImagenProfile>
+  </Usuarios>
+</Usuarios>

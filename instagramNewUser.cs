@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using instagramforce.Clases.XML;
+using System.IO;
 namespace instagramforce
 {
     public partial class instagramNewUser : Form
@@ -17,6 +18,8 @@ namespace instagramforce
         string passwordUser = "";
         string dateOfBirthUser = "";
         string pathImagenProfileUser = "";
+        Xml_acciones xml_acciones = new Xml_acciones();
+
         public instagramNewUser()
         {
             InitializeComponent();
@@ -105,7 +108,18 @@ namespace instagramforce
                 pathImagenProfileUser = "imageDefaultProfile.png";
             }
 
-           MessageBox.Show("Bienvenido: " + nickNameUser);
+            if (File.Exists("E:\\Proyectos\\C#\\Proyecto Final Progra III\\InstagramForce_Progra3\\Contenido xml\\XmlUsuario.xml"))
+            {
+                xml_acciones.Añadir_usuario("E:\\Proyectos\\C#\\Proyecto Final Progra III\\InstagramForce_Progra3\\Contenido xml\\XmlUsuario.xml", nickNameUser, nameRealUser, passwordUser, dateOfBirthUser, pathImagenProfileUser);
+            }
+            else
+            {
+                xml_acciones.crearXml("E:\\Proyectos\\C#\\Proyecto Final Progra III\\InstagramForce_Progra3\\Contenido xml\\XmlUsuario.xml", "Usuarios");
+                xml_acciones.Añadir_usuario("E:\\Proyectos\\C#\\Proyecto Final Progra III\\InstagramForce_Progra3\\Contenido xml\\XmlUsuario.xml", nickNameUser, nameRealUser, passwordUser, dateOfBirthUser, pathImagenProfileUser);
+            }
+
+
+            MessageBox.Show("Bienvenido: " + nickNameUser);
             instagramHome fHome = new instagramHome();
             this.Hide();
             fHome.Show();
