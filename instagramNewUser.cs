@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using instagramforce.Clases.XML;
 using System.IO;
+using instagramforce.Clases.Arbol_AVL;
+using instagramforce.Clases.Usuarios;
+using System.Xml;
 namespace instagramforce
 {
     public partial class instagramNewUser : Form
@@ -19,10 +22,53 @@ namespace instagramforce
         string dateOfBirthUser = "";
         string pathImagenProfileUser = "";
         Xml_acciones xml_acciones = new Xml_acciones();
+        ArbolAVL NuevosUsuarios = new ArbolAVL();
+        
+
 
         public instagramNewUser()
         {
             InitializeComponent();
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\userData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+
+            if (File.Exists(FileName))
+            {
+                XmlDocument xmldoc = new XmlDocument();
+                xmldoc.Load(FileName);
+                XmlNodeList itemsNodes = xmldoc.SelectNodes("//Usuarios//Usuario");
+                foreach (XmlNode ItemNode in itemsNodes)
+                {
+                    string USERNAME = string.Empty, FULLNAME = string.Empty, PASSWORD = string.Empty, PROFILEIMAGE = string.Empty, BIRTHDATE = string.Empty;
+   
+                    foreach (XmlNode item in ItemNode.SelectSingleNode("USERNAME"))
+                    {
+                        USERNAME = item.InnerText;
+                    }
+                    foreach (XmlNode item in ItemNode.SelectSingleNode("FULLNAME"))
+                    {
+                        FULLNAME = item.InnerText;
+                    }
+                    foreach (XmlNode item in ItemNode.SelectSingleNode("PASSWORD"))
+                    {
+                        PASSWORD = item.InnerText;
+                    }
+                    foreach (XmlNode item in ItemNode.SelectSingleNode("PROFILEIMAGE"))
+                    {
+                        PROFILEIMAGE = item.InnerText;
+                    }
+                    foreach (XmlNode item in ItemNode.SelectSingleNode("BIRTHDATE"))
+                    {
+                        BIRTHDATE = item.InnerText;
+                    }
+                    Nuevos_usuarios newUsers = new Nuevos_usuarios(USERNAME, FULLNAME, PASSWORD, PROFILEIMAGE, BIRTHDATE);
+                    NuevosUsuarios.insertar(newUsers);
+                }
+            }
+            else
+            {
+                xml_acciones.crearXml(FileName, "Usuarios");
+            }
         }
         private void instagramNewUser_Load(object sender, EventArgs e)
         {
@@ -103,6 +149,7 @@ namespace instagramforce
             nameRealUser =  txtNameUser.Text;
             passwordUser = txtPasswordUser.Text;
             dateOfBirthUser = gunaDateTimePicker1.Value.ToString("yyyy-MM-dd");
+
             if (pathImagenProfileUser.Equals(""))
             {
                 pathImagenProfileUser = "imageDefaultProfile.png";
@@ -110,17 +157,11 @@ namespace instagramforce
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string FileName = string.Format("{0}Resources\\userData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
 
-            if (File.Exists(FileName))
-            {
-                xml_acciones.Añadir_usuario(FileName, nickNameUser, nameRealUser, passwordUser, dateOfBirthUser, pathImagenProfileUser);
-            }
-            else
-            {
-                xml_acciones.crearXml(FileName, "Usuarios");
-                xml_acciones.Añadir_usuario(FileName, nickNameUser, nameRealUser, passwordUser, dateOfBirthUser, pathImagenProfileUser);
-            }
+            Nuevos_usuarios newUsers = new Nuevos_usuarios(nickNameUser, nameRealUser, passwordUser, pathImagenProfileUser, dateOfBirthUser);
 
 
+            xml_acciones.Añadir_usuario(FileName, nickNameUser, nameRealUser, passwordUser, pathImagenProfileUser, dateOfBirthUser);
+            
             MessageBox.Show("Bienvenido: " + nickNameUser);
             instagramHome fHome = new instagramHome();
             this.Hide();

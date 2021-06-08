@@ -16,7 +16,6 @@ namespace instagramforce.Clases.XML
         {
 
             this.rutaXml = ruta;
-            //doc = new XmlDocument();
 
             XmlDeclaration xmlDeclaration = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
 
@@ -29,12 +28,11 @@ namespace instagramforce.Clases.XML
             doc.Save(ruta);
         }
 
-        public void Añadir_usuario (string ruta, string nickNameUser, string nameRealUser, string passwordUseSr, string dateOfBirthUser, string pathImagenProfileUser)
+        public void Añadir_usuario (string ruta, string nickNameUser, string nameRealUser, string passwordUseSr, string pathImagenProfileUser, string dateOfBirthUser)
         {
-            //doc = new XmlDocument();
             doc.Load(ruta);
 
-            XmlNode Usuario = Crear_usuario(nickNameUser, nameRealUser, passwordUseSr, dateOfBirthUser, pathImagenProfileUser);
+            XmlNode Usuario = Crear_usuario(nickNameUser, nameRealUser, passwordUseSr, pathImagenProfileUser, dateOfBirthUser);
 
             XmlNode nodoRaiz = doc.DocumentElement;
 
@@ -43,34 +41,33 @@ namespace instagramforce.Clases.XML
             doc.Save(ruta);
         }
 
-        private XmlNode Crear_usuario(string nickNameUser, string nameRealUser, string passwordUseSr, string dateOfBirthUser, string pathImagenProfileUser)
+        private XmlNode Crear_usuario(string nickNameUser, string nameRealUser, string passwordUseSr, string pathImagenProfileUser, string dateOfBirthUser)
         {
  
-            XmlNode Usuario = doc.CreateElement("Usuarios");
+            XmlNode Usuario = doc.CreateElement("Usuario");
  
  
-            XmlElement NickName = doc.CreateElement("NickName");
-            NickName.InnerText = nickNameUser;
-            Usuario.AppendChild(NickName);
+            XmlElement USERNAME = doc.CreateElement("USERNAME");
+            USERNAME.InnerText = nickNameUser;
+            Usuario.AppendChild(USERNAME);
  
  
-            XmlElement nameUser = doc.CreateElement("NameUser");
-            nameUser.InnerText = nameRealUser;
-            Usuario.AppendChild(nameUser);
+            XmlElement FULLNAME = doc.CreateElement("FULLNAME");
+            FULLNAME.InnerText = nameRealUser;
+            Usuario.AppendChild(FULLNAME);
  
  
-            XmlElement password = doc.CreateElement("Password");
-            password.InnerText = passwordUseSr;
-            Usuario.AppendChild(password);
- 
- 
-            XmlElement dateOfBirth = doc.CreateElement("DateOfBirth");
-            dateOfBirth.InnerText = dateOfBirthUser;
-            Usuario.AppendChild(dateOfBirth);
+            XmlElement PASSWORD = doc.CreateElement("PASSWORD");
+            PASSWORD.InnerText = passwordUseSr;
+            Usuario.AppendChild(PASSWORD);
 
-            XmlElement pathImagenProfile = doc.CreateElement("PathImagenProfile");
-            pathImagenProfile.InnerText = pathImagenProfileUser;
-            Usuario.AppendChild(pathImagenProfile);
+            XmlElement PROFILEIMAGE = doc.CreateElement("PROFILEIMAGE");
+            PROFILEIMAGE.InnerText = pathImagenProfileUser;
+            Usuario.AppendChild(PROFILEIMAGE);
+
+            XmlElement BIRTHDATE = doc.CreateElement("BIRTHDATE");
+            BIRTHDATE.InnerText = dateOfBirthUser;
+            Usuario.AppendChild(BIRTHDATE);
 
             return Usuario;
         }
