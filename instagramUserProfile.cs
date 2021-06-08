@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,28 @@ namespace instagramforce
             {
                 gunaPanel1.VerticalScroll.Value = e.NewValue;
             }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            instagramHome feedApp = new instagramHome();
+            this.Hide();
+            feedApp.Visible = true;
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            instagramEditProfile feedApp = new instagramEditProfile();
+            this.Hide();
+            feedApp.Visible = true;
+        }
+
+        private void gunaPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            //Validar para que cargue la foto del usuario
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Assets\\imageDefaultProfile.png", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+            imageUser.Image = Image.FromFile(FileName);
         }
     }
 }

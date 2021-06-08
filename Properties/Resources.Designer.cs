@@ -63,9 +63,9 @@ namespace instagramforce.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap _9c35cddcf5ccaa1218b7b739eb309426 {
+        public static System.Drawing.Bitmap imageDefaultProfile {
             get {
-                object obj = ResourceManager.GetObject("9c35cddcf5ccaa1218b7b739eb309426", resourceCulture);
+                object obj = ResourceManager.GetObject("imageDefaultProfile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

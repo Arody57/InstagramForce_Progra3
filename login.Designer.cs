@@ -37,8 +37,8 @@ namespace instagramforce
             this.txtUser = new Guna.UI.WinForms.GunaTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.newUserProfile = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaPanel2.SuspendLayout();
@@ -140,16 +140,6 @@ namespace instagramforce
             this.gunaPanel2.Size = new System.Drawing.Size(368, 57);
             this.gunaPanel2.TabIndex = 1;
             // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Verdana", 9F);
-            this.gunaLabel1.Location = new System.Drawing.Point(57, 23);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(156, 14);
-            this.gunaLabel1.TabIndex = 0;
-            this.gunaLabel1.Text = "¿No tienes una cuenta?";
-            // 
             // newUserProfile
             // 
             this.newUserProfile.AutoSize = true;
@@ -162,6 +152,16 @@ namespace instagramforce
             this.newUserProfile.TabIndex = 1;
             this.newUserProfile.Text = "Regístrate";
             this.newUserProfile.Click += new System.EventHandler(this.newUserProfile_Click);
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Verdana", 9F);
+            this.gunaLabel1.Location = new System.Drawing.Point(57, 23);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(156, 14);
+            this.gunaLabel1.TabIndex = 0;
+            this.gunaLabel1.Text = "¿No tienes una cuenta?";
             // 
             // login
             // 
