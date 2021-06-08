@@ -106,12 +106,24 @@ namespace instagramforce.Clases.Arbol_AVL
 
 
 
-        public void insertar(Object valor)//throws Exception
+        public bool insertar(Object valor)//throws Exception
         {
-            Comparador dato;
-            Logical h = new Logical(false); // intercambia un valor booleano
-            dato = (Comparador)valor;
-            raiz = insertarAvl(raiz, dato, h);
+            bool flag = false;
+            try
+            {
+                Comparador dato;
+                Logical h = new Logical(false); // intercambia un valor booleano
+                dato = (Comparador)valor;
+                raiz = insertarAvl(raiz, dato, h);
+                flag = true;
+            }
+            catch (Exception)
+            {
+                flag = false;
+            }
+
+            return flag;
+            
         }
 
 
@@ -378,6 +390,25 @@ namespace instagramforce.Clases.Arbol_AVL
                 return 1 + numNodos(raiz.subarbolIzdo()) +
                 numNodos(raiz.subarbolDcho());
         }
-
+        public Nodo buscar(Object buscado)
+        {
+            Comparador dato;
+            dato = (Comparador)buscado;
+            if (raiz == null)
+                return null;
+            else
+                return buscar(raizArbol(), dato);
+        }
+        protected Nodo buscar(Nodo raizSub, Comparador buscado)
+        {
+            if (raizSub == null)
+                return null;
+            else if (buscado.igualQue(raizSub.valorNodo()))
+                return raizSub;
+            else if (buscado.menorQue(raizSub.valorNodo()))
+                return buscar(raizSub.subarbolIzdo(), buscado);
+            else
+                return buscar(raizSub.subarbolDcho(), buscado);
+        }
     }
 }

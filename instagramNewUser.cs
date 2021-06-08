@@ -159,13 +159,22 @@ namespace instagramforce
 
             Nuevos_usuarios newUsers = new Nuevos_usuarios(nickNameUser, nameRealUser, passwordUser, pathImagenProfileUser, dateOfBirthUser);
 
+            if (NuevosUsuarios.insertar(newUsers) == true)
+            {
+                NuevosUsuarios.insertar(newUsers);
+                xml_acciones.Añadir_usuario(FileName, nickNameUser, nameRealUser, passwordUser, pathImagenProfileUser, dateOfBirthUser);
+                MessageBox.Show("Bienvenido: " + nickNameUser);
+                instagramHome fHome = new instagramHome();
+                this.Hide();
+                fHome.Show();
+            }
+            else
+            {
+                MessageBox.Show("El nombre de usuario: " + nickNameUser+ " no esta disponible.\n" +
+                    "Por favor cambielo.");
+                txtNickNameUser.Text = "";
 
-            xml_acciones.Añadir_usuario(FileName, nickNameUser, nameRealUser, passwordUser, pathImagenProfileUser, dateOfBirthUser);
-            
-            MessageBox.Show("Bienvenido: " + nickNameUser);
-            instagramHome fHome = new instagramHome();
-            this.Hide();
-            fHome.Show();
+            }
         }
 
         private void txtNameUser_Validating(object sender, CancelEventArgs e)

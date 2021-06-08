@@ -21,4 +21,11 @@
     <PROFILEIMAGE>imageDefaultProfile.png</PROFILEIMAGE>
     <BIRTHDATE>2021-04-27</BIRTHDATE>
   </Usuario>
+  <Usuario>
+    <USERNAME>Prue3</USERNAME>
+    <FULLNAME>Juan</FULLNAME>
+    <PASSWORD>1234</PASSWORD>
+    <PROFILEIMAGE>imageDefaultProfile.png</PROFILEIMAGE>
+    <BIRTHDATE>2021-04-25</BIRTHDATE>
+  </Usuario>
 </Usuarios>
