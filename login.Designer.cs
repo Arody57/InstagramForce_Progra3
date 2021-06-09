@@ -100,6 +100,7 @@ namespace instagramforce
             this.txtPass.Size = new System.Drawing.Size(267, 43);
             this.txtPass.TabIndex = 10;
             this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
             this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
             // 
             // txtUser

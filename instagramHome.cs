@@ -1,4 +1,7 @@
-﻿using System;
+﻿using instagramforce.Clases.Arbol_AVL;
+using instagramforce.Clases.Usuarios;
+using instagramforce.Clases.XML;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace instagramforce
 {
@@ -17,14 +21,44 @@ namespace instagramforce
         public int y = 72;
         public int x = 56;
 
-        public int picturePostY = 26;
-        public int picturePostX = 57;
-
         public int count = 0;
         public string Username;
+        Xml_acciones xml_acciones = new Xml_acciones();
+        ArbolAVL loginUsuarios = new ArbolAVL();
         public instagramHome()
         {
             InitializeComponent();
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string fileFollowerFollowing = string.Format("{0}Resources\\FollowerFollowingData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+            string fileFeedData = string.Format("{0}Resources\\FeedData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+
+            //FollowerFollowingData
+            if (File.Exists(fileFollowerFollowing))
+            {
+                XmlDocument xmldoc = new XmlDocument();
+                xmldoc.Load(fileFollowerFollowing);
+                XmlNodeList itemsNodes = xmldoc.SelectNodes("//FOLLOWINGFOLLOWERDATA//USER");
+                foreach (XmlNode ItemNode in itemsNodes)
+                {
+                    string follower = string.Empty, following = string.Empty;
+
+                    foreach (XmlNode item in ItemNode.SelectSingleNode("FOLLOWER"))
+                    {
+                        follower = item.InnerText;
+                    }
+                    foreach (XmlNode item in ItemNode.SelectSingleNode("FOLLOWING"))
+                    {
+                        following = item.InnerText;
+                    }
+                    Login_Usuario loginUsers = new Login_Usuario(follower, following);
+                    loginUsuarios.insertar(loginUsers);
+                }
+            }
+            else
+            {
+                xml_acciones.crearXml(fileFollowerFollowing, "Usuarios");
+            }
+
         }
 
         private void gunaTextBox1_Enter(object sender, EventArgs e)
@@ -103,6 +137,12 @@ namespace instagramforce
 
             //Carga imagen con nombre de Instagram
             pictureBox1.Image = Image.FromFile("instagramLogin.jpg");
+
+
+            for (int i = 0; i <= 10; i++)
+            {
+                addNewPanelFeed();
+            }
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -119,9 +159,8 @@ namespace instagramforce
             this.Hide();
             feedApp.Visible = true;
         }
-        public void addNewPanelFeed(bool flag)
+        public void addNewPanelFeed()
         {
-            
             Panel panel1 = new Panel();
             PictureBox pictureBoxPost = new PictureBox();
             PictureBox pictureUserBox = new PictureBox();
@@ -159,13 +198,6 @@ namespace instagramforce
             count += 1;
         }
 
-        private void gunaButton1_Click(object sender, EventArgs e)
-        {
-            for (int i =0; i <= 10; i++)
-            {
-            addNewPanelFeed(true);
-            }
-        }
         private void btnPublish_Click(object sender, EventArgs e)
         {
             instagramUserPost feedApp = new instagramUserPost();

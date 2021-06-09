@@ -145,43 +145,7 @@ namespace instagramforce
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            Login_Usuario Objestudiantes = new Login_Usuario(txtUser.Text, txtPass.Text);
-            //Login_Usuario ObjestudiantesEncontrado = (Login_Usuario)loginUsuarios.buscar(Objestudiantes).valorNodo();
-            Login_Usuario ObjestudiantesEncontrado;
-            bool flag = false;
-
-            try
-            {
-                ObjestudiantesEncontrado = (Login_Usuario)loginUsuarios.buscar(Objestudiantes).valorNodo();
-
-                if (ObjestudiantesEncontrado.PASSWORD == Objestudiantes.PASSWORD && ObjestudiantesEncontrado.USERNAME == Objestudiantes.USERNAME)
-                {                   
-                    instagramHome feedApp = new instagramHome();
-                    feedApp.Username = txtUser.Text;
-                    this.Hide();
-                    feedApp.Visible = true;
-                }
-                else
-                {
-                    MessageBox.Show("La contraseña es incorrectas\n" + "¡Vuelve a interntarlo!");
-                    txtPass.Text = password;
-                    txtPass.Text = "Contraseña";
-                    txtPass.ForeColor = Color.Gray;
-                }
-            }
-            catch (Exception)
-            {
-                flag = true;
-                if (flag == true)
-                {
-                    MessageBox.Show("El usuario es incorrectas\n" + "Usuario no existente\n"+ "¡Vuelve a interntarlo!");
-                    txtUser.Text = "Usuario";
-                    txtUser.ForeColor = Color.Gray;
-                    txtPass.PasswordChar = '\0';
-                    txtPass.Text = "Contraseña";
-                    txtPass.ForeColor = Color.Gray;
-                }
-            }
+            loginUserInstagram();
         }
 
         private void login_Click(object sender, EventArgs e)
@@ -194,6 +158,55 @@ namespace instagramforce
             instagramNewUser formRegister = new instagramNewUser();
             this.Hide();
             formRegister.Show();
+        }
+
+        public void loginUserInstagram()
+        {
+            Login_Usuario Objestudiantes = new Login_Usuario(txtUser.Text, txtPass.Text);
+            //Login_Usuario ObjestudiantesEncontrado = (Login_Usuario)loginUsuarios.buscar(Objestudiantes).valorNodo();
+            Login_Usuario ObjestudiantesEncontrado;
+            bool flag = false;
+
+            try
+            {
+                ObjestudiantesEncontrado = (Login_Usuario)loginUsuarios.buscar(Objestudiantes).valorNodo();
+
+                if (ObjestudiantesEncontrado.PASSWORD == Objestudiantes.PASSWORD && ObjestudiantesEncontrado.USERNAME == Objestudiantes.USERNAME)
+                {
+                    instagramHome feedApp = new instagramHome();
+                    feedApp.Username = txtUser.Text;
+                    this.Hide();
+                    feedApp.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("La contraseña es incorrecta\n" + "¡Vuelve a intentarlo!" + "¡Vuelve a intentarlo!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPass.Text = password;
+                    txtPass.Text = "Contraseña";
+                    txtPass.ForeColor = Color.Gray;
+                }
+            }
+            catch (Exception)
+            {
+                flag = true;
+                if (flag == true)
+                {
+                    MessageBox.Show("El usuario es incorrecto\n" + "Usuario no existente\n" + "¡Vuelve a intentarlo!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtUser.Text = "Usuario";
+                    txtUser.ForeColor = Color.Gray;
+                    txtPass.PasswordChar = '\0';
+                    txtPass.Text = "Contraseña";
+                    txtPass.ForeColor = Color.Gray;
+                }
+            }
+        }
+
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                loginUserInstagram();
+            }
         }
     }
 }
