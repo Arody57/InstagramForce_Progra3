@@ -115,35 +115,73 @@ namespace instagramforce
             this.Hide();
             feedApp.Visible = true;
         }
-        public void addNewPanelFeed()
+        public void addNewPanelFeed(bool flag)
         {
-            const int d = 426;
             Guna.UI.WinForms.GunaPanel panelFeedData = new Guna.UI.WinForms.GunaPanel();
             panelFeedData.Top = 80;
             panelFeedData.Height = 424;
             panelFeedData.Width = 506;
             panelFeedData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle; 
-            panelFeedData.Location = new Point(x, y);
             panelFeedData.BackColor = Color.Black;
-            count += 1;
-
-            y = count == 1 ? ((426 * 2) - y) : ((426 * count) - y);
-            //y = ((426 * count) - y);
-
+            panelFeedData.Location = new Point(x, y);
             panelFeed.Controls.Add(panelFeedData);
+            count += 1;
+            y = count == 1 ? ((426 * 2) - y) : ((426 * count) - y);
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
             for (int i =0; i <= 100; i++)
             {
-            addNewPanelFeed();
+            addNewPanelFeed(true);
             }
         }
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-            addNewPanelFeed();
+            addNewPanelFeed(false);
+        }
+
+        private void btnPublish_Click(object sender, EventArgs e)
+        {
+            instagramUserPost feedApp = new instagramUserPost();
+            this.Hide();
+            feedApp.Visible = true;
+        }
+
+        private void lblNoPost_Click(object sender, EventArgs e)
+        {
+            instagramUserProfile feedApp = new instagramUserProfile();
+            this.Hide();
+            feedApp.Visible = true;
+        }
+
+        private void lblFollowers_Click(object sender, EventArgs e)
+        {
+            instagramUserFollowers feedApp = new instagramUserFollowers();
+            this.Hide();
+            feedApp.Visible = true;
+        }
+
+        private void lblfollowed_Click(object sender, EventArgs e)
+        {
+            instagramUserFollowing feedApp = new instagramUserFollowing();
+            this.Hide();
+            feedApp.Visible = true;
+        }
+
+        private void lblSeguidos_Click(object sender, EventArgs e)
+        {
+            instagramUserFollowing feedApp = new instagramUserFollowing();
+            this.Hide();
+            feedApp.Visible = true;
+        }
+
+        private void lblSeguidores_Click(object sender, EventArgs e)
+        {
+            instagramUserFollowers feedApp = new instagramUserFollowers();
+            this.Hide();
+            feedApp.Visible = true;
         }
     }
 }
