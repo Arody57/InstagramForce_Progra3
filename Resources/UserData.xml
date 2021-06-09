@@ -2,10 +2,10 @@
 <Usuarios>
   <Usuario>
     <USERNAME>Prue1</USERNAME>
-    <FULLNAME>User1</FULLNAME>
-    <PASSWORD>1234</PASSWORD>
-    <PROFILEIMAGE>imageDefaultProfile.png</PROFILEIMAGE>
-    <BIRTHDATE>2021-04-25</BIRTHDATE>
+    <FULLNAME>Daniel</FULLNAME>
+    <PASSWORD>12345</PASSWORD>
+    <PROFILEIMAGE>E:\Editadas\GoodPhotoFinal.jpg</PROFILEIMAGE>
+    <BIRTHDATE>2004-11-24</BIRTHDATE>
   </Usuario>
   <Usuario>
     <USERNAME>Prue2</USERNAME>

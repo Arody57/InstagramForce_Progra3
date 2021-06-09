@@ -146,19 +146,41 @@ namespace instagramforce
         private void gunaButton1_Click(object sender, EventArgs e)
         {
             Login_Usuario Objestudiantes = new Login_Usuario(txtUser.Text, txtPass.Text);
-            Login_Usuario ObjestudiantesEncontrado = (Login_Usuario)loginUsuarios.buscar(Objestudiantes).valorNodo();
+            //Login_Usuario ObjestudiantesEncontrado = (Login_Usuario)loginUsuarios.buscar(Objestudiantes).valorNodo();
+            Login_Usuario ObjestudiantesEncontrado;
+            bool flag = false;
 
-            if (ObjestudiantesEncontrado.PASSWORD == Objestudiantes.PASSWORD && ObjestudiantesEncontrado.USERNAME == Objestudiantes.USERNAME)
+            try
             {
-                instagramHome feedApp = new instagramHome();
-                this.Hide();
-                feedApp.Visible = true;
+                ObjestudiantesEncontrado = (Login_Usuario)loginUsuarios.buscar(Objestudiantes).valorNodo();
+
+                if (ObjestudiantesEncontrado.PASSWORD == Objestudiantes.PASSWORD && ObjestudiantesEncontrado.USERNAME == Objestudiantes.USERNAME)
+                {                   
+                    instagramHome feedApp = new instagramHome();
+                    feedApp.Username = txtUser.Text;
+                    this.Hide();
+                    feedApp.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("La contraseña es incorrectas\n" + "¡Vuelve a interntarlo!");
+                    txtPass.Text = password;
+                    txtPass.Text = "Contraseña";
+                    txtPass.ForeColor = Color.Gray;
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("El usuario o la contraseña son incorrectas\n"+"¡Vuelve a interntarlo!");
-                txtPass.Text = "";
-                txtUser.Text = "";
+                flag = true;
+                if (flag == true)
+                {
+                    MessageBox.Show("El usuario es incorrectas\n" + "Usuario no existente\n"+ "¡Vuelve a interntarlo!");
+                    txtUser.Text = "Usuario";
+                    txtUser.ForeColor = Color.Gray;
+                    txtPass.PasswordChar = '\0';
+                    txtPass.Text = "Contraseña";
+                    txtPass.ForeColor = Color.Gray;
+                }
             }
         }
 

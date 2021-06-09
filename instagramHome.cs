@@ -17,6 +17,7 @@ namespace instagramforce
         public int y;
         public int x = 79;
         public int count = 0;
+        public string Username;
         public instagramHome()
         {
             InitializeComponent();
@@ -103,6 +104,7 @@ namespace instagramforce
         private void iconButton2_Click(object sender, EventArgs e)
         {
             instagramUserProfile feedApp = new instagramUserProfile();
+            feedApp.Username = Username;
             this.Hide();
             feedApp.Visible = true;
 

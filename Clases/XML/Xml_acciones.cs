@@ -10,13 +10,9 @@ namespace instagramforce.Clases.XML
     class Xml_acciones
     {
         XmlDocument doc = new XmlDocument();
-        string rutaXml;
-
+        
         public void crearXml(string ruta, string nodoRaiz)
         {
-
-            this.rutaXml = ruta;
-
             XmlDeclaration xmlDeclaration = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
 
             XmlNode root = doc.DocumentElement;
@@ -70,6 +66,29 @@ namespace instagramforce.Clases.XML
             Usuario.AppendChild(BIRTHDATE);
 
             return Usuario;
+        }
+
+        public void UpdateXml(string ruta, string User, string nameRealUser, string passwordUseSr, string pathImagenProfileUser, string dateOfBirthUser)
+        {
+            doc.Load(ruta);
+
+            XmlElement Usuario = doc.DocumentElement;
+
+            XmlNodeList listaEmpleados = doc.SelectNodes("Usuarios/Usuario");
+
+            XmlNode nuevo_usuario = Crear_usuario(User, nameRealUser, passwordUseSr, pathImagenProfileUser, dateOfBirthUser);
+
+            foreach (XmlNode item in listaEmpleados)
+            {
+
+                if (item.FirstChild.InnerText == User)
+                {
+                    XmlNode nodoOld = item;
+                   Usuario.ReplaceChild(nuevo_usuario, nodoOld);
+                }
+            }
+
+            doc.Save(ruta);
         }
     }
 }

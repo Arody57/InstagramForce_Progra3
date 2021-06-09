@@ -13,6 +13,7 @@ namespace instagramforce
 {
     public partial class instagramUserProfile : Form
     {
+        public string Username;
         public instagramUserProfile()
         {
             InitializeComponent();
@@ -36,6 +37,7 @@ namespace instagramforce
         private void gunaButton1_Click(object sender, EventArgs e)
         {
             instagramEditProfile feedApp = new instagramEditProfile();
+            feedApp.Username = Username;
             this.Hide();
             feedApp.Visible = true;
         }

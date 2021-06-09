@@ -32,14 +32,14 @@ namespace instagramforce
             this.components = new System.ComponentModel.Container();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtPasswordUser = new Guna.UI.WinForms.GunaTextBox();
-            this.txtNickNameUser = new Guna.UI.WinForms.GunaTextBox();
+            this.txtpasswordUser = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.btnBuscarImagen = new Guna.UI.WinForms.GunaButton();
             this.photoProfileUser = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.txtNameUser = new Guna.UI.WinForms.GunaTextBox();
+            this.txtNicknameUser = new Guna.UI.WinForms.GunaTextBox();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.txtNameUser = new Guna.UI.WinForms.GunaTextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -56,41 +56,27 @@ namespace instagramforce
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txtPasswordUser
+            // txtpasswordUser
             // 
-            this.txtPasswordUser.BaseColor = System.Drawing.Color.White;
-            this.txtPasswordUser.BorderColor = System.Drawing.Color.Silver;
-            this.txtPasswordUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPasswordUser.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtPasswordUser.FocusedBorderColor = System.Drawing.Color.DarkGray;
-            this.txtPasswordUser.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtPasswordUser.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPasswordUser.Location = new System.Drawing.Point(91, 349);
-            this.txtPasswordUser.Name = "txtPasswordUser";
-            this.txtPasswordUser.PasswordChar = '\0';
-            this.txtPasswordUser.Size = new System.Drawing.Size(250, 37);
-            this.txtPasswordUser.TabIndex = 12;
-            // 
-            // txtNickNameUser
-            // 
-            this.txtNickNameUser.BaseColor = System.Drawing.Color.White;
-            this.txtNickNameUser.BorderColor = System.Drawing.Color.Silver;
-            this.txtNickNameUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNickNameUser.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtNickNameUser.FocusedBorderColor = System.Drawing.Color.DarkGray;
-            this.txtNickNameUser.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtNickNameUser.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNickNameUser.Location = new System.Drawing.Point(88, 291);
-            this.txtNickNameUser.Name = "txtNickNameUser";
-            this.txtNickNameUser.PasswordChar = '\0';
-            this.txtNickNameUser.Size = new System.Drawing.Size(250, 40);
-            this.txtNickNameUser.TabIndex = 11;
+            this.txtpasswordUser.BaseColor = System.Drawing.Color.White;
+            this.txtpasswordUser.BorderColor = System.Drawing.Color.Silver;
+            this.txtpasswordUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtpasswordUser.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtpasswordUser.FocusedBorderColor = System.Drawing.Color.DarkGray;
+            this.txtpasswordUser.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtpasswordUser.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtpasswordUser.Location = new System.Drawing.Point(88, 316);
+            this.txtpasswordUser.Name = "txtpasswordUser";
+            this.txtpasswordUser.PasswordChar = '\0';
+            this.txtpasswordUser.Size = new System.Drawing.Size(250, 40);
+            this.txtpasswordUser.TabIndex = 11;
+            this.txtpasswordUser.Tag = "d";
             // 
             // gunaLabel3
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(88, 402);
+            this.gunaLabel3.Location = new System.Drawing.Point(85, 359);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(124, 13);
             this.gunaLabel3.TabIndex = 10;
@@ -105,7 +91,7 @@ namespace instagramforce
             this.gunaDateTimePicker1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
             this.gunaDateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gunaDateTimePicker1.ForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.Location = new System.Drawing.Point(88, 422);
+            this.gunaDateTimePicker1.Location = new System.Drawing.Point(88, 385);
             this.gunaDateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.gunaDateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.gunaDateTimePicker1.Name = "gunaDateTimePicker1";
@@ -115,7 +101,7 @@ namespace instagramforce
             this.gunaDateTimePicker1.OnPressedColor = System.Drawing.Color.White;
             this.gunaDateTimePicker1.Size = new System.Drawing.Size(250, 37);
             this.gunaDateTimePicker1.TabIndex = 9;
-            this.gunaDateTimePicker1.Text = "domingo, 23 de mayo de 2021";
+            this.gunaDateTimePicker1.Text = "Sunday, May 23, 2021";
             this.gunaDateTimePicker1.Value = new System.DateTime(2021, 5, 23, 11, 53, 53, 561);
             // 
             // btnBuscarImagen
@@ -153,38 +139,54 @@ namespace instagramforce
             this.photoProfileUser.TabStop = false;
             this.photoProfileUser.UseTransfarantBackground = false;
             // 
+            // txtNicknameUser
+            // 
+            this.txtNicknameUser.BaseColor = System.Drawing.Color.White;
+            this.txtNicknameUser.BorderColor = System.Drawing.Color.Silver;
+            this.txtNicknameUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNicknameUser.Enabled = false;
+            this.txtNicknameUser.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtNicknameUser.FocusedBorderColor = System.Drawing.Color.DarkGray;
+            this.txtNicknameUser.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtNicknameUser.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNicknameUser.Location = new System.Drawing.Point(88, 201);
+            this.txtNicknameUser.Name = "txtNicknameUser";
+            this.txtNicknameUser.PasswordChar = '\0';
+            this.txtNicknameUser.Size = new System.Drawing.Size(250, 40);
+            this.txtNicknameUser.TabIndex = 3;
+            // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.BackColor = System.Drawing.Color.White;
+            this.gunaPanel1.Controls.Add(this.txtNameUser);
+            this.gunaPanel1.Controls.Add(this.iconButton1);
+            this.gunaPanel1.Controls.Add(this.iconButton2);
+            this.gunaPanel1.Controls.Add(this.txtpasswordUser);
+            this.gunaPanel1.Controls.Add(this.gunaLabel3);
+            this.gunaPanel1.Controls.Add(this.gunaDateTimePicker1);
+            this.gunaPanel1.Controls.Add(this.btnBuscarImagen);
+            this.gunaPanel1.Controls.Add(this.photoProfileUser);
+            this.gunaPanel1.Controls.Add(this.txtNicknameUser);
+            this.gunaPanel1.Location = new System.Drawing.Point(61, 44);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(422, 469);
+            this.gunaPanel1.TabIndex = 1;
+            // 
             // txtNameUser
             // 
             this.txtNameUser.BaseColor = System.Drawing.Color.White;
             this.txtNameUser.BorderColor = System.Drawing.Color.Silver;
             this.txtNameUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNameUser.Enabled = false;
             this.txtNameUser.FocusedBaseColor = System.Drawing.Color.White;
             this.txtNameUser.FocusedBorderColor = System.Drawing.Color.DarkGray;
             this.txtNameUser.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtNameUser.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameUser.Location = new System.Drawing.Point(88, 235);
+            this.txtNameUser.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNameUser.Location = new System.Drawing.Point(88, 259);
             this.txtNameUser.Name = "txtNameUser";
             this.txtNameUser.PasswordChar = '\0';
             this.txtNameUser.Size = new System.Drawing.Size(250, 40);
-            this.txtNameUser.TabIndex = 3;
-            // 
-            // gunaPanel1
-            // 
-            this.gunaPanel1.BackColor = System.Drawing.Color.White;
-            this.gunaPanel1.Controls.Add(this.iconButton1);
-            this.gunaPanel1.Controls.Add(this.iconButton2);
-            this.gunaPanel1.Controls.Add(this.txtPasswordUser);
-            this.gunaPanel1.Controls.Add(this.txtNickNameUser);
-            this.gunaPanel1.Controls.Add(this.gunaLabel3);
-            this.gunaPanel1.Controls.Add(this.gunaDateTimePicker1);
-            this.gunaPanel1.Controls.Add(this.btnBuscarImagen);
-            this.gunaPanel1.Controls.Add(this.photoProfileUser);
-            this.gunaPanel1.Controls.Add(this.txtNameUser);
-            this.gunaPanel1.Location = new System.Drawing.Point(61, 44);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(419, 510);
-            this.gunaPanel1.TabIndex = 1;
+            this.txtNameUser.TabIndex = 16;
+            this.txtNameUser.TextChanged += new System.EventHandler(this.gunaTextBox1_TextChanged);
             // 
             // iconButton1
             // 
@@ -220,7 +222,7 @@ namespace instagramforce
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 596);
+            this.ClientSize = new System.Drawing.Size(568, 578);
             this.Controls.Add(this.gunaPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "instagramEditProfile";
@@ -240,14 +242,14 @@ namespace instagramforce
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
-        private Guna.UI.WinForms.GunaTextBox txtPasswordUser;
-        private Guna.UI.WinForms.GunaTextBox txtNickNameUser;
+        private Guna.UI.WinForms.GunaTextBox txtpasswordUser;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker1;
         private Guna.UI.WinForms.GunaButton btnBuscarImagen;
         private Guna.UI.WinForms.GunaCirclePictureBox photoProfileUser;
-        private Guna.UI.WinForms.GunaTextBox txtNameUser;
+        private Guna.UI.WinForms.GunaTextBox txtNicknameUser;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private Guna.UI.WinForms.GunaTextBox txtNameUser;
     }
 }
