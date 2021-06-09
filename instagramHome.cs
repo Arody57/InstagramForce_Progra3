@@ -14,8 +14,12 @@ namespace instagramforce
     public partial class instagramHome : Form
     {
         string searchData = "";
-        public int y;
-        public int x = 79;
+        public int y = 72;
+        public int x = 56;
+
+        public int picturePostY = 26;
+        public int picturePostX = 57;
+
         public int count = 0;
         public string Username;
         public instagramHome()
@@ -117,31 +121,51 @@ namespace instagramforce
         }
         public void addNewPanelFeed(bool flag)
         {
-            Guna.UI.WinForms.GunaPanel panelFeedData = new Guna.UI.WinForms.GunaPanel();
-            panelFeedData.Top = 80;
-            panelFeedData.Height = 424;
-            panelFeedData.Width = 506;
-            panelFeedData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle; 
-            panelFeedData.BackColor = Color.Black;
-            panelFeedData.Location = new Point(x, y);
-            panelFeed.Controls.Add(panelFeedData);
+            
+            Panel panel1 = new Panel();
+            PictureBox pictureBoxPost = new PictureBox();
+            PictureBox pictureUserBox = new PictureBox();
+            Label nameUser = new Label();
+            Label descriptionPost = new Label();
+
+            panel1.Size = new Size(506, 424);
+            panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+            nameUser.Location = new Point(90, 358);
+            nameUser.Text = "usuario publicacionsadfasdfasdfasdfasdf";
+            nameUser.Size = new Size(400, 13);
+            panel1.Controls.Add(nameUser);
+
+            descriptionPost.Location = new Point(90,380);
+            descriptionPost.Text = "Prueba de descripcin de publicacinasdfasdfasdfasdfasdf";
+            descriptionPost.Size = new Size(400, 13);
+            panel1.Controls.Add(descriptionPost);
+
+            pictureBoxPost.Location = new Point(26, 20);
+            pictureBoxPost.BackColor = Color.Gray;
+            pictureBoxPost.Size = new Size(450,328);
+            panel1.Controls.Add(pictureBoxPost);
+
+
+            pictureUserBox.Location = new Point(26, 358);
+            pictureUserBox.BackColor = Color.Gray;
+            pictureUserBox.Size = new Size(50, 50);
+            panel1.Controls.Add(pictureUserBox);
+
+            panel1.Location = new Point(x, y);
+            panelFeed.Controls.Add(panel1);
+
+            y =(424 * count) + 72;
             count += 1;
-            y = count == 1 ? ((426 * 2) - y) : ((426 * count) - y);
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            for (int i =0; i <= 100; i++)
+            for (int i =0; i <= 10; i++)
             {
             addNewPanelFeed(true);
             }
         }
-
-        private void gunaButton2_Click(object sender, EventArgs e)
-        {
-            addNewPanelFeed(false);
-        }
-
         private void btnPublish_Click(object sender, EventArgs e)
         {
             instagramUserPost feedApp = new instagramUserPost();
