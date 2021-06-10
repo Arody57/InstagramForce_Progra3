@@ -165,6 +165,7 @@ namespace instagramforce
                 xml_acciones.Añadir_usuario(FileName, nickNameUser, nameRealUser, passwordUser, pathImagenProfileUser, dateOfBirthUser);
                 MessageBox.Show("Bienvenido: " + nickNameUser);
                 instagramHome fHome = new instagramHome();
+                fHome.Username = nickNameUser;
                 this.Hide();
                 fHome.Show();
             }

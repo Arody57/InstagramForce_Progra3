@@ -90,5 +90,41 @@ namespace instagramforce.Clases.XML
 
             doc.Save(ruta);
         }
+
+        public void Añadir_post(string ruta, string nickNameUser, string pathImagenPost, string dataPost, string datePost)
+        {
+            doc.Load(ruta);
+
+            XmlNode Usuario = Crear_post(nickNameUser, pathImagenPost, dataPost, datePost);
+
+            XmlNode nodoRaiz = doc.DocumentElement;
+
+            nodoRaiz.InsertBefore(Usuario, nodoRaiz.FirstChild);
+
+            doc.Save(ruta);
+        }
+
+        private XmlNode Crear_post(string nickNameUser, string pathImagenPost, string dataPost, string datePost)
+        {
+            XmlNode Usuario = doc.CreateElement("Post");
+
+            XmlElement USERNAME = doc.CreateElement("USERNAME");
+            USERNAME.InnerText = nickNameUser;
+            Usuario.AppendChild(USERNAME);
+
+            XmlElement IMAGEPOST = doc.CreateElement("IMAGEPOST");
+            IMAGEPOST.InnerText = pathImagenPost;
+            Usuario.AppendChild(IMAGEPOST);
+
+            XmlElement DATAPOST = doc.CreateElement("DATAPOST");
+            DATAPOST.InnerText = dataPost;
+            Usuario.AppendChild(DATAPOST);
+
+            XmlElement DATEPOST = doc.CreateElement("DATEPOST");
+            DATEPOST.InnerText = datePost;
+            Usuario.AppendChild(DATEPOST);
+
+            return Usuario;
+        }
     }
 }

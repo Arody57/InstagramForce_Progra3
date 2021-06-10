@@ -2,10 +2,10 @@
 <Usuarios>
   <Usuario>
     <USERNAME>Prue1</USERNAME>
-    <FULLNAME>Daniel</FULLNAME>
-    <PASSWORD>12345</PASSWORD>
-    <PROFILEIMAGE>E:\Editadas\GoodPhotoFinal.jpg</PROFILEIMAGE>
-    <BIRTHDATE>2004-11-24</BIRTHDATE>
+    <FULLNAME>Daniel J</FULLNAME>
+    <PASSWORD>1234</PASSWORD>
+    <PROFILEIMAGE>imageDefaultProfile.png</PROFILEIMAGE>
+    <BIRTHDATE>2021-05-23</BIRTHDATE>
   </Usuario>
   <Usuario>
     <USERNAME>Prue2</USERNAME>
@@ -28,11 +28,18 @@
     <PROFILEIMAGE>imageDefaultProfile.png</PROFILEIMAGE>
     <BIRTHDATE>2021-04-25</BIRTHDATE>
   </Usuario>
-	<Usuario>
-		<USERNAME>sa</USERNAME>
-		<FULLNAME>sa</FULLNAME>
-		<PASSWORD>123</PASSWORD>
-		<PROFILEIMAGE>imageDefaultProfile.png</PROFILEIMAGE>
-		<BIRTHDATE>2021-04-25</BIRTHDATE>
-	</Usuario>
+  <Usuario>
+    <USERNAME>sa</USERNAME>
+    <FULLNAME>sa</FULLNAME>
+    <PASSWORD>123</PASSWORD>
+    <PROFILEIMAGE>imageDefaultProfile.png</PROFILEIMAGE>
+    <BIRTHDATE>2021-04-25</BIRTHDATE>
+  </Usuario>
+  <Usuario>
+    <USERNAME>Prue5</USERNAME>
+    <FULLNAME>User5</FULLNAME>
+    <PASSWORD>1234</PASSWORD>
+    <PROFILEIMAGE>imageDefaultProfile.png</PROFILEIMAGE>
+    <BIRTHDATE>2021-04-28</BIRTHDATE>
+  </Usuario>
 </Usuarios>

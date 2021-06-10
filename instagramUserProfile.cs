@@ -30,6 +30,7 @@ namespace instagramforce
         private void iconButton1_Click(object sender, EventArgs e)
         {
             instagramHome feedApp = new instagramHome();
+            feedApp.Username = Username;
             this.Hide();
             feedApp.Visible = true;
         }

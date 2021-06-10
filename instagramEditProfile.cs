@@ -36,6 +36,7 @@ namespace instagramforce
         public void backPage()
         {
             instagramUserProfile feedApp = new instagramUserProfile();
+            feedApp.Username = Username;
             this.Hide();
             feedApp.Visible = true;
         }
@@ -46,7 +47,6 @@ namespace instagramforce
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            backPage();
             nickNameUser = Username;
             nameRealUser = txtNameUser.Text;
             passwordUser = txtpasswordUser.Text;
@@ -58,9 +58,9 @@ namespace instagramforce
 
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string FileName = string.Format("{0}Resources\\userData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
-
             xml_acciones.UpdateXml(FileName, nickNameUser, nameRealUser, passwordUser, pathImagenProfileUser, dateOfBirthUser);
             MessageBox.Show("Se ha actualizado la información del usuario: " + nickNameUser);
+            backPage();
         }
 
         private void btnBuscarImagen_Click(object sender, EventArgs e)
