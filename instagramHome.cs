@@ -30,6 +30,19 @@ namespace instagramforce
         public int panelFollowingsX = 16;
         public int countFollowings = 0;
 
+        public int inicioCount = 0;
+        public int finalCount;
+
+        public List<string> myListFeed = new List<string>();
+        public List<(string, string, string, string)> myPostListUsers = new List<(string, string, string, string)>();
+
+        public class User
+        {
+            public string Name { get; set; }
+
+            public int Age { get; set; }
+        }
+
         public string Username;
         Xml_acciones xml_acciones = new Xml_acciones();
         ArbolAVL loginUsuarios = new ArbolAVL();
@@ -136,13 +149,76 @@ namespace instagramforce
             //Carga imagen con nombre de Instagram
             pictureBox1.Image = Image.FromFile("instagramLogin.jpg");
 
+            leerXMLFollowerFollowingData();
+        }
+        public void leerXMLFollowerFollowingData()
+        {
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\FollowerFollowingData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
 
-
-            for (int i = 0; i < 10; i++)
+            if (File.Exists(FileName))
             {
-                addNewPanelFeed();
-                addNewPanelFollowers();
-                addNewPanelFollowing();
+                XmlDocument xmldoc = new XmlDocument();
+                xmldoc.Load(FileName);
+                XmlNodeList itemsNodes = xmldoc.SelectNodes("//FOLLOWINGFOLLOWERDATA//USER");
+                foreach (XmlNode ItemNode in itemsNodes)
+                {
+                    string FOLLOWER = string.Empty, FOLLOWING = string.Empty;
+
+                    foreach (XmlNode item in ItemNode.SelectSingleNode("FOLLOWER"))
+                    {
+                        if (Username == item.InnerText)
+                        {
+                            FOLLOWER = item.InnerText;
+                            foreach (XmlNode items in ItemNode.SelectSingleNode("FOLLOWING"))
+                            {
+                                FOLLOWING = items.InnerText;
+                                myListFeed.Add(FOLLOWING);
+                            }
+                        }
+                    }
+                }
+            }
+            llerXmlFeedData(); 
+        }
+        public void llerXmlFeedData()
+        {
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\FeedData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+
+            if (File.Exists(FileName))
+            {
+                XmlDocument xmldoc = new XmlDocument();
+                xmldoc.Load(FileName);
+                XmlNodeList itemsNodes = xmldoc.SelectNodes("//Posts//Post");
+                XmlNode user;
+
+                for (int a = 0; a < myListFeed.Count; a++)
+                {
+                    for (int i = 0; i < itemsNodes.Count; i++)
+                    {
+                        user = itemsNodes.Item(i);
+                        string userNames = user.SelectSingleNode("USERNAME").InnerText;
+                        if (userNames == myListFeed[a])
+                        {
+                            string imagePost = user.SelectSingleNode("IMAGEPOST").InnerText;
+                            string dataPost = user.SelectSingleNode("DATAPOST").InnerText;
+                            string datePost = user.SelectSingleNode("DATEPOST").InnerText;
+
+                            myPostListUsers.Add((userNames, imagePost, dataPost, datePost));
+                        }
+                    }
+                }
+                
+            }
+            foreach (var list in myPostListUsers)
+            {
+                string userNames = list.Item1;
+                string ImagePost = list.Item2;
+                string dataPost = list.Item3;
+                string datePost = list.Item4;
+
+                addNewPanelFeed(userNames, ImagePost, dataPost, datePost);
             }
         }
 
@@ -161,7 +237,7 @@ namespace instagramforce
             this.Hide();
             feedApp.Visible = true;
         }
-        public void addNewPanelFeed()
+        public void addNewPanelFeed(string userName, string imagePost, string dataPost, string datePost)
         {
             Panel panel1 = new Panel();
             PictureBox pictureBoxPost = new PictureBox();
@@ -169,21 +245,27 @@ namespace instagramforce
             Label nameUser = new Label();
             Label descriptionPost = new Label();
 
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}"+ imagePost+"", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+
             panel1.Size = new Size(506, 424);
             panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
             nameUser.Location = new Point(90, 358);
-            nameUser.Text = "usuario publicacionsadfasdfasdfasdfasdf";
+            nameUser.Text = userName;
+            nameUser.Cursor = Cursors.Hand;
             nameUser.Size = new Size(400, 13);
             panel1.Controls.Add(nameUser);
 
             descriptionPost.Location = new Point(90, 380);
-            descriptionPost.Text = "Prueba de descripcin de publicacinasdfasdfasdfasdfasdf";
+            descriptionPost.Text = dataPost;
             descriptionPost.Size = new Size(400, 13);
             panel1.Controls.Add(descriptionPost);
 
             pictureBoxPost.Location = new Point(26, 20);
             pictureBoxPost.BackColor = Color.Gray;
+            pictureBoxPost.Image = Image.FromFile(FileName);
+            pictureBoxPost.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxPost.Size = new Size(450, 328);
             panel1.Controls.Add(pictureBoxPost);
 
@@ -199,7 +281,7 @@ namespace instagramforce
             y = (424 * count) + 72;
             count += 1;
         }
-        public void addNewPanelFollowers()
+        public void addNewPanelFollowers(string pathImage, string nameFollower)
         {
             //Creacion de paneles para Seguidores
             Panel panelFollowers = new Panel();
@@ -220,6 +302,7 @@ namespace instagramforce
             //Creacion de la label
             nameFollowers.Location = new Point(89, 32);
             nameFollowers.Text = "PRUEBA USUARIO";
+            nameFollowers.Cursor = Cursors.Hand;
             nameFollowers.Size = new Size(68, 15);
             panelFollowers.Controls.Add(nameFollowers);
 
@@ -229,7 +312,7 @@ namespace instagramforce
             panelFollowersY = (86 * countPanelFollowers) + 7;
             countPanelFollowers += 1;
         }
-        public void addNewPanelFollowing()
+        public void addNewPanelFollowing(string pathImage, string nameFollowing)
         {
             Panel panelFollowers = new Panel();
             Guna.UI.WinForms.GunaCirclePictureBox pictureBoxFollowers = new Guna.UI.WinForms.GunaCirclePictureBox();
@@ -249,6 +332,7 @@ namespace instagramforce
             //Creacion de la label
             nameFollowers.Location = new Point(89, 32);
             nameFollowers.Text = "PRUEBA USUARIO";
+            nameFollowers.Cursor = Cursors.Hand;
             nameFollowers.Size = new Size(68, 15);
             panelFollowers.Controls.Add(nameFollowers);
 
