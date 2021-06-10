@@ -21,7 +21,12 @@ namespace instagramforce
         public int y = 72;
         public int x = 56;
 
+        public int panelFollowersY;
+        public int panelFollowersX;
+
         public int count = 0;
+        public int countPanelFollowers = 0;
+
         public string Username;
         Xml_acciones xml_acciones = new Xml_acciones();
         ArbolAVL loginUsuarios = new ArbolAVL();
@@ -141,7 +146,7 @@ namespace instagramforce
 
             for (int i = 0; i <= 10; i++)
             {
-                addNewPanelFeed();
+                addNewPanelFollowers();
             }
         }
 
@@ -175,14 +180,14 @@ namespace instagramforce
             nameUser.Size = new Size(400, 13);
             panel1.Controls.Add(nameUser);
 
-            descriptionPost.Location = new Point(90,380);
+            descriptionPost.Location = new Point(90, 380);
             descriptionPost.Text = "Prueba de descripcin de publicacinasdfasdfasdfasdfasdf";
             descriptionPost.Size = new Size(400, 13);
             panel1.Controls.Add(descriptionPost);
 
             pictureBoxPost.Location = new Point(26, 20);
             pictureBoxPost.BackColor = Color.Gray;
-            pictureBoxPost.Size = new Size(450,328);
+            pictureBoxPost.Size = new Size(450, 328);
             panel1.Controls.Add(pictureBoxPost);
 
 
@@ -194,10 +199,43 @@ namespace instagramforce
             panel1.Location = new Point(x, y);
             panelFeed.Controls.Add(panel1);
 
-            y =(424 * count) + 72;
+            y = (424 * count) + 72;
             count += 1;
         }
+        public void addNewPanelFollowers()
+        {
+            //Creacion de paneles para Seguidores
+            Panel panelFollowers = new Panel();
+            PictureBox pictureBoxFollowers = new PictureBox();
+            Label nameFollowers= new Label();
 
+            //creacion del panel
+            panelFollowers.Size = new Size(236, 81);
+            panelFollowers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+            //Creacion del pictureBox
+            pictureBoxFollowers.Location = new Point(13, 13);
+            pictureBoxFollowers.BackColor = Color.Gray;
+            pictureBoxFollowers.Size = new Size(64, 55);
+            panelFollowers.Controls.Add(pictureBoxFollowers);
+
+            //Creacion de la label
+            nameFollowers.Location = new Point(89, 32);
+            nameFollowers.Text = "PRUEBA USUARIO";
+            nameFollowers.Size = new Size(68, 15);
+            panelFollowers.Controls.Add(nameFollowers);
+
+            panelFollowers.Location = new Point(28, 43);
+            panelFollowersHome.Controls.Add(panelFollowers);
+            y = (64 * countPanelFollowers) + 64;
+            countPanelFollowers += 1;
+
+        }
+        public void addNewPanelFollowing()
+        {
+            //Creacion de paneles para Seguidos
+
+        }
         private void btnPublish_Click(object sender, EventArgs e)
         {
             instagramUserPost feedApp = new instagramUserPost();
