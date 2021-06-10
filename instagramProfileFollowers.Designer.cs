@@ -67,6 +67,7 @@ namespace instagramforce
             this.iconButton1.Size = new System.Drawing.Size(49, 46);
             this.iconButton1.TabIndex = 27;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // gunaButton1
             // 

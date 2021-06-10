@@ -20,12 +20,15 @@ namespace instagramforce
         string searchData = "";
         public int y = 72;
         public int x = 56;
-
-        public int panelFollowersY;
-        public int panelFollowersX;
-
         public int count = 0;
+
+        public int panelFollowersY = 7;
+        public int panelFollowersX = 16;
         public int countPanelFollowers = 0;
+
+        public int panelFollowingsY = 7;
+        public int panelFollowingsX = 16;
+        public int countFollowings = 0;
 
         public string Username;
         Xml_acciones xml_acciones = new Xml_acciones();
@@ -146,7 +149,9 @@ namespace instagramforce
 
             for (int i = 0; i <= 10; i++)
             {
+                addNewPanelFeed();
                 addNewPanelFollowers();
+                addNewPanelFollowing();
             }
         }
 
@@ -207,17 +212,18 @@ namespace instagramforce
         {
             //Creacion de paneles para Seguidores
             Panel panelFollowers = new Panel();
-            PictureBox pictureBoxFollowers = new PictureBox();
+            Guna.UI.WinForms.GunaCirclePictureBox pictureBoxFollowers = new Guna.UI.WinForms.GunaCirclePictureBox();
+            
             Label nameFollowers= new Label();
 
             //creacion del panel
-            panelFollowers.Size = new Size(236, 81);
+            panelFollowers.Size = new Size(234, 86);
             panelFollowers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
             //Creacion del pictureBox
-            pictureBoxFollowers.Location = new Point(13, 13);
+            pictureBoxFollowers.Location = new Point(14, 12);
             pictureBoxFollowers.BackColor = Color.Gray;
-            pictureBoxFollowers.Size = new Size(64, 55);
+            pictureBoxFollowers.Size = new Size(70, 63);
             panelFollowers.Controls.Add(pictureBoxFollowers);
 
             //Creacion de la label
@@ -226,16 +232,40 @@ namespace instagramforce
             nameFollowers.Size = new Size(68, 15);
             panelFollowers.Controls.Add(nameFollowers);
 
-            panelFollowers.Location = new Point(28, 43);
+            panelFollowers.Location = new Point(panelFollowersX, panelFollowersY);
             panelFollowersHome.Controls.Add(panelFollowers);
-            y = (64 * countPanelFollowers) + 64;
-            countPanelFollowers += 1;
 
+            panelFollowersY = (86 * countPanelFollowers) + 7;
+            countPanelFollowers += 1;
         }
         public void addNewPanelFollowing()
         {
-            //Creacion de paneles para Seguidos
+            Panel panelFollowers = new Panel();
+            Guna.UI.WinForms.GunaCirclePictureBox pictureBoxFollowers = new Guna.UI.WinForms.GunaCirclePictureBox();
+            
+            Label nameFollowers= new Label();
 
+            //creacion del panel
+            panelFollowers.Size = new Size(234, 86);
+            panelFollowers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+            //Creacion del pictureBox
+            pictureBoxFollowers.Location = new Point(14, 12);
+            pictureBoxFollowers.BackColor = Color.Gray;
+            pictureBoxFollowers.Size = new Size(70, 63);
+            panelFollowers.Controls.Add(pictureBoxFollowers);
+
+            //Creacion de la label
+            nameFollowers.Location = new Point(89, 32);
+            nameFollowers.Text = "PRUEBA USUARIO";
+            nameFollowers.Size = new Size(68, 15);
+            panelFollowers.Controls.Add(nameFollowers);
+
+            panelFollowers.Location = new Point(panelFollowingsX, panelFollowingsY);
+            panelFollowing.Controls.Add(panelFollowers);
+
+            panelFollowingsY = (86 * countFollowings) + 7;
+            countFollowings += 1;
         }
         private void btnPublish_Click(object sender, EventArgs e)
         {

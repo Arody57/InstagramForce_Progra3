@@ -16,5 +16,12 @@ namespace instagramforce
         {
             InitializeComponent();
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            instagramHome feedApp = new instagramHome();
+            this.Hide();
+            feedApp.Visible = true;
+        }
     }
 }
