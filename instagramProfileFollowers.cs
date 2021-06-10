@@ -12,6 +12,8 @@ namespace instagramforce
 {
     public partial class instagramProfileFollowers : Form
     {
+        public string Username;
+        public string Follower;
         public instagramProfileFollowers()
         {
             InitializeComponent();
@@ -22,6 +24,16 @@ namespace instagramforce
             instagramHome feedApp = new instagramHome();
             this.Hide();
             feedApp.Visible = true;
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

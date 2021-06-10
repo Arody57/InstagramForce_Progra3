@@ -32,7 +32,7 @@ namespace instagramforce
             this.components = new System.ComponentModel.Container();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.bttSeguir = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
@@ -44,7 +44,7 @@ namespace instagramforce
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
+            this.bttDejardeSeguir = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.imageUser)).BeginInit();
             this.gunaPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -69,29 +69,30 @@ namespace instagramforce
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
-            // gunaButton1
+            // bttSeguir
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(216, 143);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(109, 26);
-            this.gunaButton1.TabIndex = 25;
-            this.gunaButton1.Text = "Seguir";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bttSeguir.AnimationHoverSpeed = 0.07F;
+            this.bttSeguir.AnimationSpeed = 0.03F;
+            this.bttSeguir.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.bttSeguir.BorderColor = System.Drawing.Color.Black;
+            this.bttSeguir.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.bttSeguir.FocusedColor = System.Drawing.Color.Empty;
+            this.bttSeguir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttSeguir.ForeColor = System.Drawing.Color.White;
+            this.bttSeguir.Image = null;
+            this.bttSeguir.ImageSize = new System.Drawing.Size(20, 20);
+            this.bttSeguir.Location = new System.Drawing.Point(216, 143);
+            this.bttSeguir.Name = "bttSeguir";
+            this.bttSeguir.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.bttSeguir.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.bttSeguir.OnHoverForeColor = System.Drawing.Color.White;
+            this.bttSeguir.OnHoverImage = null;
+            this.bttSeguir.OnPressedColor = System.Drawing.Color.Black;
+            this.bttSeguir.Size = new System.Drawing.Size(109, 26);
+            this.bttSeguir.TabIndex = 25;
+            this.bttSeguir.Text = "Seguir";
+            this.bttSeguir.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bttSeguir.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // gunaLabel6
             // 
@@ -198,38 +199,39 @@ namespace instagramforce
             this.gunaPanel3.Size = new System.Drawing.Size(431, 301);
             this.gunaPanel3.TabIndex = 0;
             // 
-            // gunaButton2
+            // bttDejardeSeguir
             // 
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaButton2.Image = null;
-            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(374, 143);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = null;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Size = new System.Drawing.Size(130, 26);
-            this.gunaButton2.TabIndex = 28;
-            this.gunaButton2.Text = "Dejar de seguir";
-            this.gunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bttDejardeSeguir.AnimationHoverSpeed = 0.07F;
+            this.bttDejardeSeguir.AnimationSpeed = 0.03F;
+            this.bttDejardeSeguir.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.bttDejardeSeguir.BorderColor = System.Drawing.Color.Black;
+            this.bttDejardeSeguir.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.bttDejardeSeguir.FocusedColor = System.Drawing.Color.Empty;
+            this.bttDejardeSeguir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttDejardeSeguir.ForeColor = System.Drawing.Color.White;
+            this.bttDejardeSeguir.Image = null;
+            this.bttDejardeSeguir.ImageSize = new System.Drawing.Size(20, 20);
+            this.bttDejardeSeguir.Location = new System.Drawing.Point(374, 143);
+            this.bttDejardeSeguir.Name = "bttDejardeSeguir";
+            this.bttDejardeSeguir.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.bttDejardeSeguir.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.bttDejardeSeguir.OnHoverForeColor = System.Drawing.Color.White;
+            this.bttDejardeSeguir.OnHoverImage = null;
+            this.bttDejardeSeguir.OnPressedColor = System.Drawing.Color.Black;
+            this.bttDejardeSeguir.Size = new System.Drawing.Size(130, 26);
+            this.bttDejardeSeguir.TabIndex = 28;
+            this.bttDejardeSeguir.Text = "Dejar de seguir";
+            this.bttDejardeSeguir.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bttDejardeSeguir.Click += new System.EventHandler(this.gunaButton2_Click);
             // 
             // instagramProfileFollowers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 635);
-            this.Controls.Add(this.gunaButton2);
+            this.Controls.Add(this.bttDejardeSeguir);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.gunaButton1);
+            this.Controls.Add(this.bttSeguir);
             this.Controls.Add(this.gunaLabel6);
             this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.gunaLabel4);
@@ -253,9 +255,9 @@ namespace instagramforce
         #endregion
 
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
-        private Guna.UI.WinForms.GunaButton gunaButton2;
+        private Guna.UI.WinForms.GunaButton bttDejardeSeguir;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaButton bttSeguir;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
