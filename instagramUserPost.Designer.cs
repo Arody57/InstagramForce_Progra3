@@ -32,13 +32,13 @@ namespace instagramforce
             this.components = new System.ComponentModel.Container();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.bttCancelar = new Guna.UI.WinForms.GunaButton();
+            this.bttPublicar = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.txtdataPost = new Guna.UI.WinForms.GunaTextBox();
             this.btnBuscarImagen = new Guna.UI.WinForms.GunaButton();
             this.photoPost = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photoPost)).BeginInit();
             this.SuspendLayout();
@@ -52,10 +52,10 @@ namespace instagramforce
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.White;
             this.gunaPanel1.Controls.Add(this.gunaLabel2);
-            this.gunaPanel1.Controls.Add(this.gunaButton2);
-            this.gunaPanel1.Controls.Add(this.gunaButton1);
+            this.gunaPanel1.Controls.Add(this.bttCancelar);
+            this.gunaPanel1.Controls.Add(this.bttPublicar);
             this.gunaPanel1.Controls.Add(this.gunaLabel1);
-            this.gunaPanel1.Controls.Add(this.gunaTextBox1);
+            this.gunaPanel1.Controls.Add(this.txtdataPost);
             this.gunaPanel1.Controls.Add(this.btnBuscarImagen);
             this.gunaPanel1.Controls.Add(this.photoPost);
             this.gunaPanel1.Location = new System.Drawing.Point(37, 41);
@@ -63,52 +63,63 @@ namespace instagramforce
             this.gunaPanel1.Size = new System.Drawing.Size(669, 373);
             this.gunaPanel1.TabIndex = 8;
             // 
-            // gunaButton2
+            // gunaLabel2
             // 
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Verdana", 10F);
-            this.gunaButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaButton2.Image = null;
-            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(578, 333);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = null;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Size = new System.Drawing.Size(78, 28);
-            this.gunaButton2.TabIndex = 13;
-            this.gunaButton2.Text = "Cancelar";
-            this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel2.Location = new System.Drawing.Point(17, 18);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(159, 18);
+            this.gunaLabel2.TabIndex = 14;
+            this.gunaLabel2.Text = "Crear publicación";
             // 
-            // gunaButton1
+            // bttCancelar
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(184)))), ((int)(((byte)(23)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Verdana", 10F);
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(501, 333);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(198)))), ((int)(((byte)(69)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(71, 28);
-            this.gunaButton1.TabIndex = 12;
-            this.gunaButton1.Text = "Publicar";
+            this.bttCancelar.AnimationHoverSpeed = 0.07F;
+            this.bttCancelar.AnimationSpeed = 0.03F;
+            this.bttCancelar.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.bttCancelar.BorderColor = System.Drawing.Color.Black;
+            this.bttCancelar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.bttCancelar.FocusedColor = System.Drawing.Color.Empty;
+            this.bttCancelar.Font = new System.Drawing.Font("Verdana", 10F);
+            this.bttCancelar.ForeColor = System.Drawing.Color.White;
+            this.bttCancelar.Image = null;
+            this.bttCancelar.ImageSize = new System.Drawing.Size(20, 20);
+            this.bttCancelar.Location = new System.Drawing.Point(578, 333);
+            this.bttCancelar.Name = "bttCancelar";
+            this.bttCancelar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.bttCancelar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.bttCancelar.OnHoverForeColor = System.Drawing.Color.White;
+            this.bttCancelar.OnHoverImage = null;
+            this.bttCancelar.OnPressedColor = System.Drawing.Color.Black;
+            this.bttCancelar.Size = new System.Drawing.Size(78, 28);
+            this.bttCancelar.TabIndex = 13;
+            this.bttCancelar.Text = "Cancelar";
+            this.bttCancelar.Click += new System.EventHandler(this.gunaButton2_Click);
+            // 
+            // bttPublicar
+            // 
+            this.bttPublicar.AnimationHoverSpeed = 0.07F;
+            this.bttPublicar.AnimationSpeed = 0.03F;
+            this.bttPublicar.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(184)))), ((int)(((byte)(23)))));
+            this.bttPublicar.BorderColor = System.Drawing.Color.Black;
+            this.bttPublicar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.bttPublicar.FocusedColor = System.Drawing.Color.Empty;
+            this.bttPublicar.Font = new System.Drawing.Font("Verdana", 10F);
+            this.bttPublicar.ForeColor = System.Drawing.Color.White;
+            this.bttPublicar.Image = null;
+            this.bttPublicar.ImageSize = new System.Drawing.Size(20, 20);
+            this.bttPublicar.Location = new System.Drawing.Point(501, 333);
+            this.bttPublicar.Name = "bttPublicar";
+            this.bttPublicar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(198)))), ((int)(((byte)(69)))));
+            this.bttPublicar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.bttPublicar.OnHoverForeColor = System.Drawing.Color.White;
+            this.bttPublicar.OnHoverImage = null;
+            this.bttPublicar.OnPressedColor = System.Drawing.Color.Black;
+            this.bttPublicar.Size = new System.Drawing.Size(71, 28);
+            this.bttPublicar.TabIndex = 12;
+            this.bttPublicar.Text = "Publicar";
+            this.bttPublicar.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // gunaLabel1
             // 
@@ -120,22 +131,22 @@ namespace instagramforce
             this.gunaLabel1.TabIndex = 11;
             this.gunaLabel1.Text = "¿Qué estás pensando?";
             // 
-            // gunaTextBox1
+            // txtdataPost
             // 
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.Black;
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.gunaTextBox1.Location = new System.Drawing.Point(340, 133);
-            this.gunaTextBox1.MaxLength = 150;
-            this.gunaTextBox1.MultiLine = true;
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Size = new System.Drawing.Size(300, 135);
-            this.gunaTextBox1.TabIndex = 10;
+            this.txtdataPost.BaseColor = System.Drawing.Color.White;
+            this.txtdataPost.BorderColor = System.Drawing.Color.Silver;
+            this.txtdataPost.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtdataPost.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtdataPost.FocusedBorderColor = System.Drawing.Color.Black;
+            this.txtdataPost.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtdataPost.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.txtdataPost.Location = new System.Drawing.Point(340, 133);
+            this.txtdataPost.MaxLength = 150;
+            this.txtdataPost.MultiLine = true;
+            this.txtdataPost.Name = "txtdataPost";
+            this.txtdataPost.PasswordChar = '\0';
+            this.txtdataPost.Size = new System.Drawing.Size(300, 135);
+            this.txtdataPost.TabIndex = 10;
             // 
             // btnBuscarImagen
             // 
@@ -171,16 +182,6 @@ namespace instagramforce
             this.photoPost.TabIndex = 8;
             this.photoPost.TabStop = false;
             // 
-            // gunaLabel2
-            // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel2.Location = new System.Drawing.Point(17, 18);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(159, 18);
-            this.gunaLabel2.TabIndex = 14;
-            this.gunaLabel2.Text = "Crear publicación";
-            // 
             // instagramUserPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,11 +204,11 @@ namespace instagramforce
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
+        private Guna.UI.WinForms.GunaTextBox txtdataPost;
         private Guna.UI.WinForms.GunaButton btnBuscarImagen;
         private Guna.UI.WinForms.GunaPictureBox photoPost;
-        private Guna.UI.WinForms.GunaButton gunaButton2;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaButton bttCancelar;
+        private Guna.UI.WinForms.GunaButton bttPublicar;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
     }
 }

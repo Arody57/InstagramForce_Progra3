@@ -156,6 +156,7 @@ namespace instagramforce
         private void iconButton1_Click(object sender, EventArgs e)
         {
             instagramHome feedApp = new instagramHome();
+            feedApp.Username = Username;
             this.Hide();
             feedApp.Visible = true;
         }
@@ -201,6 +202,7 @@ namespace instagramforce
         private void btnPublish_Click(object sender, EventArgs e)
         {
             instagramUserPost feedApp = new instagramUserPost();
+            feedApp.Username = Username;
             this.Hide();
             feedApp.Visible = true;
         }
