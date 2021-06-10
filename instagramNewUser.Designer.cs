@@ -134,7 +134,7 @@ namespace instagramforce
             this.gunaDateTimePicker1.OnPressedColor = System.Drawing.Color.White;
             this.gunaDateTimePicker1.Size = new System.Drawing.Size(250, 30);
             this.gunaDateTimePicker1.TabIndex = 9;
-            this.gunaDateTimePicker1.Text = "domingo, 23 de mayo de 2021";
+            this.gunaDateTimePicker1.Text = "Sunday, May 23, 2021";
             this.gunaDateTimePicker1.Value = new System.DateTime(2021, 5, 23, 11, 53, 53, 561);
             // 
             // btnRegistrarCuenta
@@ -150,7 +150,7 @@ namespace instagramforce
             this.btnRegistrarCuenta.ForeColor = System.Drawing.Color.White;
             this.btnRegistrarCuenta.Image = null;
             this.btnRegistrarCuenta.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnRegistrarCuenta.Location = new System.Drawing.Point(94, 520);
+            this.btnRegistrarCuenta.Location = new System.Drawing.Point(94, 521);
             this.btnRegistrarCuenta.Name = "btnRegistrarCuenta";
             this.btnRegistrarCuenta.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(255)))));
             this.btnRegistrarCuenta.OnHoverBorderColor = System.Drawing.Color.Black;
