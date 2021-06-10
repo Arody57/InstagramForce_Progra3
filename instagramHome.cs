@@ -181,6 +181,37 @@ namespace instagramforce
             }
             llerXmlFeedData(); 
         }
+        public void leerXmlUserData()
+        {
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\UserData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+
+            if (File.Exists(FileName))
+            {
+                XmlDocument xmldoc = new XmlDocument();
+                xmldoc.Load(FileName);
+                XmlNodeList itemsNodes = xmldoc.SelectNodes("//Posts//Post");
+                XmlNode user;
+
+                for (int a = 0; a < myListFeed.Count; a++)
+                {
+                    for (int i = 0; i < itemsNodes.Count; i++)
+                    {
+                        user = itemsNodes.Item(i);
+                        string userNames = user.SelectSingleNode("USERNAME").InnerText;
+                        if (userNames == myListFeed[a])
+                        {
+                            string imagePost = user.SelectSingleNode("IMAGEPOST").InnerText;
+                            string dataPost = user.SelectSingleNode("DATAPOST").InnerText;
+                            string datePost = user.SelectSingleNode("DATEPOST").InnerText;
+
+                            myPostListUsers.Add((userNames, imagePost, dataPost, datePost));
+                        }
+                    }
+                }
+
+            }
+        }
         public void llerXmlFeedData()
         {
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
@@ -213,12 +244,7 @@ namespace instagramforce
             }
             foreach (var list in myPostListUsers)
             {
-                string userNames = list.Item1;
-                string ImagePost = list.Item2;
-                string dataPost = list.Item3;
-                string datePost = list.Item4;
-
-                addNewPanelFeed(userNames, ImagePost, dataPost, datePost);
+                addNewPanelFeed(list.Item1, list.Item2, list.Item3, list.Item4);
             }
         }
 
