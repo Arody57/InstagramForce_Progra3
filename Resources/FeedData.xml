@@ -2,27 +2,15 @@
 <Posts>
   <Post>
     <USERNAME>Prue1</USERNAME>
-    <IMAGEPOST>E:\Proyectos\C#\Proyecto Final Progra III\InstagramForce_Progra3\Resources\PhotoPost\07b01bb905d821617ed86b63f8988f1b.jpg</IMAGEPOST>
-    <DATAPOST>Prueva 4 Usuario 1</DATAPOST>
-    <DATEPOST>2021-06-09 06:00:19</DATEPOST>
+    <IMAGEPOST>Resources\PhotoPost\4-pixelshuh-pixelart-oldskull.jpg</IMAGEPOST>
+    <DATAPOST>Prueba 2 Usuario 1</DATAPOST>
+    <DATEPOST>2021-06-09 10:08:11</DATEPOST>
   </Post>
   <Post>
     <USERNAME>Prue1</USERNAME>
-    <IMAGEPOST>E:\Proyectos\C#\Proyecto Final Progra III\InstagramForce_Progra3\Resources\PhotoPost\5-pixelshuh-pixelart-oldskull.jpg</IMAGEPOST>
-    <DATAPOST>Prueva 3 usuario 1</DATAPOST>
-    <DATEPOST>2021-06-09 05:59:56</DATEPOST>
-  </Post>
-  <Post>
-    <USERNAME>Prue1</USERNAME>
-    <IMAGEPOST>E:\Proyectos\C#\Proyecto Final Progra III\InstagramForce_Progra3\Resources\PhotoPost\4-pixelshuh-pixelart-oldskull.jpg</IMAGEPOST>
-    <DATAPOST>Prueva 2 Usuario 1</DATAPOST>
-    <DATEPOST>2021-06-09 05:59:33</DATEPOST>
-  </Post>
-  <Post>
-    <USERNAME>Prue1</USERNAME>
-    <IMAGEPOST>E:\Proyectos\C#\Proyecto Final Progra III\InstagramForce_Progra3\Resources\PhotoPost\0a62be7c6d866c3d4e87044d1f1dd9b1.png</IMAGEPOST>
-    <DATAPOST>Prueva 1 Usuario 1</DATAPOST>
-    <DATEPOST>2021-06-09 05:59:13</DATEPOST>
+    <IMAGEPOST>E:\Editadas\GoodPhotoFinal.jpg</IMAGEPOST>
+    <DATAPOST>Prueba 1 Usuario 1</DATAPOST>
+    <DATEPOST>2021-06-09 10:07:15</DATEPOST>
   </Post>
    <Post>
 		<USERNAME>SKING</USERNAME>

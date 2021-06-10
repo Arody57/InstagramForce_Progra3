@@ -20,6 +20,7 @@ namespace instagramforce
         string pathImagenPost = "";
         string dataPost = "";
         string datePost = "";
+        string pathPostremp = "";
         string pathFinalPostImage = "";
         Xml_acciones xml_Acciones = new Xml_acciones();
 
@@ -36,8 +37,17 @@ namespace instagramforce
             {
                 photoPost.Image = Image.FromFile(abrir.FileName);
                 pathImagenPost = abrir.FileName;
-                pathFinalPostImage = pathImagenPost.Substring(pathImagenPost.IndexOf("Resources"));
-                if (!pathImagenPost.Equals(""))
+                if (pathImagenPost.Contains("Resources"))
+                {
+                    pathPostremp = pathImagenPost.Substring(pathImagenPost.IndexOf("Resources"));
+                    pathFinalPostImage = pathPostremp;
+                }
+                else
+                {
+                    pathFinalPostImage = pathImagenPost;
+                }
+
+                if (!pathImagenPost.Equals("") || !pathFinalPostImage.Equals(""))
                 {
                     bttPublicar.Enabled = true;
                 }

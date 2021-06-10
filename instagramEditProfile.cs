@@ -23,6 +23,8 @@ namespace instagramforce
         string passwordUser = "";
         string dateOfBirthUser = "";
         string pathImagenProfileUser = "";
+        string pathImagenProfileUsertremp = "";
+        string pathFinalImagenProfileUser = "";
         public string Username;
         Xml_acciones xml_acciones = new Xml_acciones();
 
@@ -31,6 +33,7 @@ namespace instagramforce
             InitializeComponent();
             txtNicknameUser.Text = Username;
             txtNicknameUser.ForeColor = Color.Gray;
+            iconButton2.Enabled = false;
         }
 
         public void backPage()
@@ -70,6 +73,15 @@ namespace instagramforce
             {
                 photoProfileUser.Image = Image.FromFile(abrir.FileName);
                 pathImagenProfileUser = abrir.FileName;
+                if (pathImagenProfileUser.Contains("Resources"))
+                {
+                    pathImagenProfileUsertremp = pathImagenProfileUser.Substring(pathImagenProfileUser.IndexOf("Resources"));
+                    pathFinalImagenProfileUser = pathImagenProfileUsertremp;
+                }
+                else
+                {
+                    pathFinalImagenProfileUser = pathImagenProfileUser;
+                }               
                 photoProfileUser.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
