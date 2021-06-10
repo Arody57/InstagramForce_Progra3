@@ -126,16 +126,6 @@ namespace instagramforce
             }
         }
 
-        private void buscar_Click(object sender, EventArgs e)
-        {
-            //OpenFileDialog abrir = new OpenFileDialog();
-            //if (abrir.ShowDialog() == DialogResult.OK)
-            //{
-            //    photoUserProfile.Image = Image.FromFile(abrir.FileName);
-            //    photoUserProfile.SizeMode = PictureBoxSizeMode.StretchImage;
-            //}
-        }
-
         private void instagramHome_Load(object sender, EventArgs e)
         {
             //Falta validar para que agarre la imagen que trae el usuario en el XML
@@ -147,7 +137,8 @@ namespace instagramforce
             pictureBox1.Image = Image.FromFile("instagramLogin.jpg");
 
 
-            for (int i = 0; i <= 10; i++)
+
+            for (int i = 0; i < 10; i++)
             {
                 addNewPanelFeed();
                 addNewPanelFollowers();

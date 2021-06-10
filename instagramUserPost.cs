@@ -20,6 +20,7 @@ namespace instagramforce
         string pathImagenPost = "";
         string dataPost = "";
         string datePost = "";
+        string pathFinalPostImage = "";
         Xml_acciones xml_Acciones = new Xml_acciones();
 
         public instagramUserPost()
@@ -35,6 +36,7 @@ namespace instagramforce
             {
                 photoPost.Image = Image.FromFile(abrir.FileName);
                 pathImagenPost = abrir.FileName;
+                pathFinalPostImage = pathImagenPost.Substring(pathImagenPost.IndexOf("Resources"));
                 if (!pathImagenPost.Equals(""))
                 {
                     bttPublicar.Enabled = true;
@@ -62,7 +64,7 @@ namespace instagramforce
             string FileName = string.Format("{0}Resources\\FeedData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
             if (File.Exists(FileName))
             {
-                xml_Acciones.Añadir_post(FileName, nickNameUser, pathImagenPost, dataPost, datePost);
+                xml_Acciones.Añadir_post(FileName, nickNameUser, pathFinalPostImage, dataPost, datePost);
                 MessageBox.Show("Se a posteado exitosamente " + nickNameUser);
                 fHome.Username = Username;
                 this.Hide();
@@ -71,7 +73,7 @@ namespace instagramforce
             else
             {
                 xml_Acciones.crearXml(FileName, "Posts");
-                xml_Acciones.Añadir_post(FileName, nickNameUser, pathImagenPost, dataPost, datePost);
+                xml_Acciones.Añadir_post(FileName, nickNameUser, pathFinalPostImage, dataPost, datePost);
                 MessageBox.Show("Se a posteado exitosamente " + nickNameUser);
                 fHome.Username = Username;
                 this.Hide();
