@@ -113,6 +113,12 @@
     <Compile Include="instagramProfileFollowers.Designer.cs">
       <DependentUpon>instagramProfileFollowers.cs</DependentUpon>
     </Compile>
+    <Compile Include="instagramSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="instagramSearch.Designer.cs">
+      <DependentUpon>instagramSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="instagramUserFollowers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="instagramProfileFollowers.resx">
       <DependentUpon>instagramProfileFollowers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="instagramSearch.resx">
+      <DependentUpon>instagramSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="instagramUserFollowers.resx">
       <DependentUpon>instagramUserFollowers.cs</DependentUpon>

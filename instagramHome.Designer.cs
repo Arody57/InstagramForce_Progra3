@@ -38,26 +38,26 @@ namespace instagramforce
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
+            this.panelFollowing = new Guna.UI.WinForms.GunaPanel();
+            this.lblSeguidores = new Guna.UI.WinForms.GunaLabel();
+            this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
+            this.panelFollowersHome = new Guna.UI.WinForms.GunaPanel();
+            this.lblSeguidos = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.lblfollowed = new Guna.UI.WinForms.GunaLabel();
-            this.panelFollowing = new Guna.UI.WinForms.GunaPanel();
-            this.panelFollowersHome = new Guna.UI.WinForms.GunaPanel();
             this.lblFollowers = new Guna.UI.WinForms.GunaLabel();
             this.lblNoPost = new Guna.UI.WinForms.GunaLabel();
             this.photoUserProfile = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.panelFeed = new Guna.UI.WinForms.GunaPanel();
-            this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
-            this.lblSeguidos = new Guna.UI.WinForms.GunaLabel();
-            this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
-            this.lblSeguidores = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.photoUserProfile)).BeginInit();
-            this.gunaPanel3.SuspendLayout();
             this.gunaPanel4.SuspendLayout();
+            this.gunaPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoUserProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // d
@@ -166,6 +166,62 @@ namespace instagramforce
             this.gunaPanel2.Size = new System.Drawing.Size(293, 594);
             this.gunaPanel2.TabIndex = 1;
             // 
+            // gunaPanel4
+            // 
+            this.gunaPanel4.Controls.Add(this.panelFollowing);
+            this.gunaPanel4.Controls.Add(this.lblSeguidores);
+            this.gunaPanel4.Location = new System.Drawing.Point(0, 333);
+            this.gunaPanel4.Name = "gunaPanel4";
+            this.gunaPanel4.Size = new System.Drawing.Size(290, 258);
+            this.gunaPanel4.TabIndex = 11;
+            // 
+            // panelFollowing
+            // 
+            this.panelFollowing.AutoScroll = true;
+            this.panelFollowing.Location = new System.Drawing.Point(6, 30);
+            this.panelFollowing.Name = "panelFollowing";
+            this.panelFollowing.Size = new System.Drawing.Size(275, 225);
+            this.panelFollowing.TabIndex = 5;
+            // 
+            // lblSeguidores
+            // 
+            this.lblSeguidores.AutoSize = true;
+            this.lblSeguidores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSeguidores.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeguidores.Location = new System.Drawing.Point(102, 14);
+            this.lblSeguidores.Name = "lblSeguidores";
+            this.lblSeguidores.Size = new System.Drawing.Size(80, 13);
+            this.lblSeguidores.TabIndex = 11;
+            this.lblSeguidores.Text = "Seguidores";
+            // 
+            // gunaPanel3
+            // 
+            this.gunaPanel3.Controls.Add(this.panelFollowersHome);
+            this.gunaPanel3.Controls.Add(this.lblSeguidos);
+            this.gunaPanel3.Location = new System.Drawing.Point(0, 99);
+            this.gunaPanel3.Name = "gunaPanel3";
+            this.gunaPanel3.Size = new System.Drawing.Size(289, 228);
+            this.gunaPanel3.TabIndex = 10;
+            // 
+            // panelFollowersHome
+            // 
+            this.panelFollowersHome.AutoScroll = true;
+            this.panelFollowersHome.Location = new System.Drawing.Point(6, 28);
+            this.panelFollowersHome.Name = "panelFollowersHome";
+            this.panelFollowersHome.Size = new System.Drawing.Size(276, 197);
+            this.panelFollowersHome.TabIndex = 4;
+            // 
+            // lblSeguidos
+            // 
+            this.lblSeguidos.AutoSize = true;
+            this.lblSeguidos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSeguidos.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeguidos.Location = new System.Drawing.Point(109, 12);
+            this.lblSeguidos.Name = "lblSeguidos";
+            this.lblSeguidos.Size = new System.Drawing.Size(66, 13);
+            this.lblSeguidos.TabIndex = 11;
+            this.lblSeguidos.Text = "Seguidos";
+            // 
             // gunaLabel3
             // 
             this.gunaLabel3.AutoSize = true;
@@ -206,22 +262,6 @@ namespace instagramforce
             this.lblfollowed.TabIndex = 6;
             this.lblfollowed.Text = "Seguidos";
             this.lblfollowed.Click += new System.EventHandler(this.lblfollowed_Click);
-            // 
-            // panelFollowing
-            // 
-            this.panelFollowing.AutoScroll = true;
-            this.panelFollowing.Location = new System.Drawing.Point(6, 30);
-            this.panelFollowing.Name = "panelFollowing";
-            this.panelFollowing.Size = new System.Drawing.Size(275, 225);
-            this.panelFollowing.TabIndex = 5;
-            // 
-            // panelFollowersHome
-            // 
-            this.panelFollowersHome.AutoScroll = true;
-            this.panelFollowersHome.Location = new System.Drawing.Point(6, 28);
-            this.panelFollowersHome.Name = "panelFollowersHome";
-            this.panelFollowersHome.Size = new System.Drawing.Size(276, 197);
-            this.panelFollowersHome.TabIndex = 4;
             // 
             // lblFollowers
             // 
@@ -266,44 +306,6 @@ namespace instagramforce
             this.panelFeed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panelFeed_Scroll);
             this.panelFeed.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFeed_Paint);
             // 
-            // gunaPanel3
-            // 
-            this.gunaPanel3.Controls.Add(this.panelFollowersHome);
-            this.gunaPanel3.Controls.Add(this.lblSeguidos);
-            this.gunaPanel3.Location = new System.Drawing.Point(0, 99);
-            this.gunaPanel3.Name = "gunaPanel3";
-            this.gunaPanel3.Size = new System.Drawing.Size(289, 228);
-            this.gunaPanel3.TabIndex = 10;
-            // 
-            // lblSeguidos
-            // 
-            this.lblSeguidos.AutoSize = true;
-            this.lblSeguidos.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeguidos.Location = new System.Drawing.Point(109, 12);
-            this.lblSeguidos.Name = "lblSeguidos";
-            this.lblSeguidos.Size = new System.Drawing.Size(66, 13);
-            this.lblSeguidos.TabIndex = 11;
-            this.lblSeguidos.Text = "Seguidos";
-            // 
-            // gunaPanel4
-            // 
-            this.gunaPanel4.Controls.Add(this.panelFollowing);
-            this.gunaPanel4.Controls.Add(this.lblSeguidores);
-            this.gunaPanel4.Location = new System.Drawing.Point(0, 333);
-            this.gunaPanel4.Name = "gunaPanel4";
-            this.gunaPanel4.Size = new System.Drawing.Size(290, 258);
-            this.gunaPanel4.TabIndex = 11;
-            // 
-            // lblSeguidores
-            // 
-            this.lblSeguidores.AutoSize = true;
-            this.lblSeguidores.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeguidores.Location = new System.Drawing.Point(102, 14);
-            this.lblSeguidores.Name = "lblSeguidores";
-            this.lblSeguidores.Size = new System.Drawing.Size(80, 13);
-            this.lblSeguidores.TabIndex = 11;
-            this.lblSeguidores.Text = "Seguidores";
-            // 
             // instagramHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,11 +323,11 @@ namespace instagramforce
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gunaPanel2.ResumeLayout(false);
             this.gunaPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.photoUserProfile)).EndInit();
-            this.gunaPanel3.ResumeLayout(false);
-            this.gunaPanel3.PerformLayout();
             this.gunaPanel4.ResumeLayout(false);
             this.gunaPanel4.PerformLayout();
+            this.gunaPanel3.ResumeLayout(false);
+            this.gunaPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoUserProfile)).EndInit();
             this.ResumeLayout(false);
 
         }
