@@ -63,6 +63,7 @@ namespace instagramforce
 
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string FileName = string.Format("{0}Resources\\userData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+            string PROFILEIMAGEPAHT = "";
             XmlDocument xmldoc = new XmlDocument();
             xmldoc.Load(FileName);
             string PROFILEIMAGE = string.Empty;
@@ -74,20 +75,31 @@ namespace instagramforce
                     foreach (XmlNode itemPaht in itemNode.SelectSingleNode("PROFILEIMAGE"))
                     {
                         PROFILEIMAGE = itemPaht.InnerText;
+                        if (PROFILEIMAGE.Contains("Resources"))
+                        {
+                            PROFILEIMAGEPAHT = string.Format(Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+                            PROFILEIMAGEPAHT += PROFILEIMAGE;
+                        }
+                        else
+                        {
+                            PROFILEIMAGEPAHT = PROFILEIMAGE; 
+                        }
                     }
                 }
             }
-            return PROFILEIMAGE;
+            return PROFILEIMAGEPAHT;
         }
 
-        //public void Label_Click(object sender, System.EventArgs e)
-        //{
-        //    instagramProfileFollowers feedApp = new instagramProfileFollowers();
-        //    feedApp.Username = Username;
-        //    feedApp.Follower = Follower;
-        //    this.Hide();
-        //    feedApp.Show();
-        //}
+        public void Label_Click(object sender, EventArgs e)
+        {
+            Label lblUsers = (Label)sender;
+            string dato = this.panelFeed.Controls.Find("Label", true).ToString();
+            instagramProfileFollowers feedApp = new instagramProfileFollowers();
+            feedApp.Username = Username;
+            feedApp.perfilUser = lblUsers.Text; ;
+            this.Hide();
+            feedApp.Show();
+        }
 
         public void addNewPanelSearch(string USERNAME, string pathimage)
         {
@@ -96,6 +108,7 @@ namespace instagramforce
 
 
             Label nameFollowers = new Label();
+            //LinkLabel nameFollowers = new LinkLabel();
             
             //creacion del panel
             panelSearch.Size = new Size(435, 80);
@@ -112,7 +125,7 @@ namespace instagramforce
             nameFollowers.Location = new Point(89, 32);
             nameFollowers.Text = USERNAME;
             nameFollowers.Cursor = Cursors.Hand;
-            //nameFollowers = Label_Click(); 
+            nameFollowers.Click += new EventHandler(Label_Click);
             nameFollowers.Size = new Size(435, 15);
             panelSearch.Controls.Add(nameFollowers);
 

@@ -136,9 +136,9 @@ namespace instagramforce
                 }
                 else
                 {
-                txtPass.PasswordChar = '*';
-                txtPass.Text = password;
-                txtPass.ForeColor = Color.Black;
+                    txtPass.PasswordChar = '*';
+                    txtPass.Text = password;
+                    txtPass.ForeColor = Color.Black;
                 }
             }
         }
@@ -200,7 +200,6 @@ namespace instagramforce
                 }
             }
         }
-
         private void txtPass_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
