@@ -80,6 +80,7 @@
     <Compile Include="Clases\Tablas Hash\DispersionHash.cs" />
     <Compile Include="Clases\Tablas Hash\Lista.cs" />
     <Compile Include="Clases\Tablas Hash\Nodo.cs" />
+    <Compile Include="Clases\Usuarios\Busqueda Usuario.cs" />
     <Compile Include="Clases\Usuarios\Login Usuario.cs" />
     <Compile Include="Clases\Usuarios\Nuevos usuarios.cs" />
     <Compile Include="Clases\XML\Xml_acciones.cs" />

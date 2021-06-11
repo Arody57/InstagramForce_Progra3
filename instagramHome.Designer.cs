@@ -52,6 +52,7 @@ namespace instagramforce
             this.lblNoPost = new Guna.UI.WinForms.GunaLabel();
             this.photoUserProfile = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.panelFeed = new Guna.UI.WinForms.GunaPanel();
+            this.iconButtonSearch = new FontAwesome.Sharp.IconButton();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaPanel2.SuspendLayout();
@@ -66,6 +67,7 @@ namespace instagramforce
             // 
             // gunaPanel1
             // 
+            this.gunaPanel1.Controls.Add(this.iconButtonSearch);
             this.gunaPanel1.Controls.Add(this.btnPublish);
             this.gunaPanel1.Controls.Add(this.gunaTextBox1);
             this.gunaPanel1.Controls.Add(this.iconButton2);
@@ -306,6 +308,21 @@ namespace instagramforce
             this.panelFeed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panelFeed_Scroll);
             this.panelFeed.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFeed_Paint);
             // 
+            // iconButtonSearch
+            // 
+            this.iconButtonSearch.FlatAppearance.BorderSize = 0;
+            this.iconButtonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconButtonSearch.IconColor = System.Drawing.Color.Black;
+            this.iconButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSearch.IconSize = 45;
+            this.iconButtonSearch.Location = new System.Drawing.Point(683, 22);
+            this.iconButtonSearch.Name = "iconButtonSearch";
+            this.iconButtonSearch.Size = new System.Drawing.Size(49, 46);
+            this.iconButtonSearch.TabIndex = 16;
+            this.iconButtonSearch.UseVisualStyleBackColor = true;
+            this.iconButtonSearch.Click += new System.EventHandler(this.iconButtonSearch_Click);
+            // 
             // instagramHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,5 +373,6 @@ namespace instagramforce
         private Guna.UI.WinForms.GunaLabel lblSeguidos;
         private Guna.UI.WinForms.GunaPanel gunaPanel4;
         private Guna.UI.WinForms.GunaLabel lblSeguidores;
+        private FontAwesome.Sharp.IconButton iconButtonSearch;
     }
 }

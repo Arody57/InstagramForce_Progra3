@@ -32,10 +32,10 @@ namespace instagramforce
             this.components = new System.ComponentModel.Container();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panelFeed = new Guna.UI.WinForms.GunaPanel();
             this.lblSearch = new Guna.UI.WinForms.GunaLabel();
             this.backPage = new FontAwesome.Sharp.IconButton();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.gunaPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,14 @@ namespace instagramforce
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(612, 519);
             this.gunaPanel1.TabIndex = 3;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(187, 54);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(262, 20);
+            this.txtSearch.TabIndex = 18;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // panelFeed
             // 
@@ -88,13 +96,6 @@ namespace instagramforce
             this.backPage.TabIndex = 15;
             this.backPage.UseVisualStyleBackColor = true;
             this.backPage.Click += new System.EventHandler(this.backPage_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(187, 54);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(262, 20);
-            this.txtSearch.TabIndex = 18;
             // 
             // instagramSearch
             // 

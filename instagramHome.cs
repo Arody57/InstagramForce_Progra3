@@ -410,5 +410,13 @@ namespace instagramforce
             this.Hide();
             feedApp.Visible = true;
         }
+
+        private void iconButtonSearch_Click(object sender, EventArgs e)
+        {
+            instagramSearch feedApp = new instagramSearch();
+            feedApp.Username = Username;
+            this.Hide();
+            feedApp.Visible = true;
+        }
     }
 }
