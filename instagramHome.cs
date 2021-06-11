@@ -144,11 +144,6 @@ namespace instagramforce
 
         private void instagramHome_Load(object sender, EventArgs e)
         {
-            //Falta validar para que agarre la imagen que trae el usuario en el XML
-            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
-            string FileName = string.Format("{0}Assets\\imageDefaultProfile.png", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
-            photoUserProfile.Image = Image.FromFile(FileName);
-
             //Carga imagen con nombre de Instagram
             pictureBox1.Image = Image.FromFile("instagramLogin.jpg");
             leerXMLUserData();
@@ -178,7 +173,19 @@ namespace instagramforce
                     }
                 }
             }
-
+            if (myUsersFeed.Count !=0)
+            {
+                string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+                string FileName = string.Format("{0}" + myUsersFeed[0].Item2 + "", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+                photoUserProfile.Image = Image.FromFile(FileName);
+            }
+            else
+            {
+                string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+                string FileName = string.Format("{0}Assets\\imageDefaultProfile.png", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+                photoUserProfile.Image = Image.FromFile(FileName);
+            }
+            
         }
         public void leerXMLFollowerFollowingData()
         {
@@ -202,13 +209,24 @@ namespace instagramforce
                             {
                             FOLLOWING = items.InnerText;
                             myPreliminarList.Add((FOLLOWING));
-
                             }
                         }
                     }
                 }
             }
-            llerXmlFeedData(); 
+            llerXmlFeedData();
+
+            lblFollowerrss.Text = Convert.ToString(myPreliminarList.Count);
+            foreach (var lists in myUsersFeed1)
+            {
+                foreach (var items in myPreliminarList)
+                {
+                    if (lists.Item1 == items)
+                    {
+                        addNewPanelFollowers(lists.Item1, lists.Item2);
+                    }
+                }
+            }
         }
         public void llerXmlFeedData()
         {
@@ -314,27 +332,28 @@ namespace instagramforce
             y = (424 * count) + 72;
             count += 1;
         }
-        public void addNewPanelFollowers(string pathImage, string nameFollower)
+        public void addNewPanelFollowers(string nameFollower, string pathImage)
         {
             //Creacion de paneles para Seguidores
             Panel panelFollowers = new Panel();
             Guna.UI.WinForms.GunaCirclePictureBox pictureBoxFollowers = new Guna.UI.WinForms.GunaCirclePictureBox();
             
             Label nameFollowers= new Label();
-
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FilePhoto = string.Format("{0}" + pathImage + "", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
             //creacion del panel
             panelFollowers.Size = new Size(234, 86);
             panelFollowers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
             //Creacion del pictureBox
             pictureBoxFollowers.Location = new Point(14, 12);
-            pictureBoxFollowers.BackColor = Color.Gray;
+            pictureBoxFollowers.Image = Image.FromFile(FilePhoto);
             pictureBoxFollowers.Size = new Size(70, 63);
             panelFollowers.Controls.Add(pictureBoxFollowers);
 
             //Creacion de la label
             nameFollowers.Location = new Point(89, 32);
-            nameFollowers.Text = "PRUEBA USUARIO";
+            nameFollowers.Text = nameFollower;
             nameFollowers.Cursor = Cursors.Hand;
             nameFollowers.Size = new Size(68, 15);
             panelFollowers.Controls.Add(nameFollowers);
@@ -358,7 +377,6 @@ namespace instagramforce
 
             //Creacion del pictureBox
             pictureBoxFollowers.Location = new Point(14, 12);
-            pictureBoxFollowers.BackColor = Color.Gray;
             pictureBoxFollowers.Size = new Size(70, 63);
             panelFollowers.Controls.Add(pictureBoxFollowers);
 
