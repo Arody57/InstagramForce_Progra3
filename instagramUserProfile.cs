@@ -43,8 +43,15 @@ namespace instagramforce
         {
             instagramHome feedApp = new instagramHome();
             feedApp.Username = Username;
+            feedApp.fullNameUser = fullNameUser;
+            feedApp.photoUserName = photoUserName;
+            feedApp.userBirthDate = userBirthDate;
+            feedApp.followersUser = followersUser;
+            feedApp.followingUser = followingUser;
+            feedApp.postUser = postUser;
             this.Hide();
             feedApp.Visible = true;
+
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
@@ -57,7 +64,7 @@ namespace instagramforce
 
         private void gunaPanel1_Paint(object sender, PaintEventArgs e)
         {
-            //Validar para que cargue la foto del usuario
+            
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             if (string.IsNullOrEmpty(photoUserName))
             {
@@ -104,8 +111,8 @@ namespace instagramforce
                             string datePost = user.SelectSingleNode("DATEPOST").InnerText;
 
                             drawingGeneralPanel panels = new drawingGeneralPanel();
-                            myPostListUsers.Add((userNames, imagePost, dataPost, datePost));
-                            Panel panelComponentes = panels.addNewPanelFeed(userNames, imagePost, dataPost, datePost, imagePost, x, y);
+                        myPostListUsers.Add((userNames, imagePost, dataPost, datePost));
+                        Panel panelComponentes = panels.addNewPanelFeed(userNames, imagePost, dataPost, datePost, imagePost, x, y);
                             panelFeedUser.Controls.Add(panelComponentes);
                             y = (424 * count) + 72;
                             count += 1;

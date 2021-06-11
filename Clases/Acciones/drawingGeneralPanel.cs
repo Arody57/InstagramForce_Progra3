@@ -29,9 +29,11 @@ namespace instagramforce.Clases.Acciones
             nameUser.Location = new Point(90, 358);
             nameUser.Text = userName;
             nameUser.Cursor = Cursors.Hand;
+            nameUser.Click += new EventHandler(event_Click);
             nameUser.Size = new Size(400, 13);
             panel1.Controls.Add(nameUser);
 
+            
             descriptionPost.Location = new Point(90, 380);
             descriptionPost.Text = dataPost;
             descriptionPost.Size = new Size(400, 13);
@@ -54,6 +56,15 @@ namespace instagramforce.Clases.Acciones
 
             panel1.Location = new Point(x, y);
             return panel1;
+        }
+
+        private void event_Click(object sender, EventArgs e)
+        {
+            Label lblUser = (Label)sender;
+            string user = lblUser.Text;
+            instagramProfileFollowers feedAp = new instagramProfileFollowers();
+            feedAp.perfilUser = user;
+            feedAp.Visible = true;
         }
     }
 }
