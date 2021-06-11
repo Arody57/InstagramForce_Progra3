@@ -35,8 +35,9 @@ namespace instagramforce
 
         public List<string> myListFeed = new List<string>();
         public List<(string, string)> myUsersFeed = new List<(string, string)>();
-        public List<(string, string)> myPreliminarList= new List<(string, string)>();
-        public List<(string, string, string, string,string)> myPostListUsers = new List<(string, string, string, string,string)>();
+        public List<(string, string)> myUsersFeed1 = new List<(string, string)>();
+        public List<string> myPreliminarList= new List<string>();
+        public List<( string, string, string,string)> myPostListUsers = new List<(string, string, string, string)>();
 
         public class User
         {
@@ -150,58 +151,48 @@ namespace instagramforce
 
             //Carga imagen con nombre de Instagram
             pictureBox1.Image = Image.FromFile("instagramLogin.jpg");
-            leerXmlUserData();
+            leerXMLUserData();
             leerXMLFollowerFollowingData();
         }
-        public void leerXmlUserData()
+        public void leerXMLUserData()
         {
-            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
-            string FileName = string.Format("{0}Resources\\userData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
-
-            if (File.Exists(FileName))
+            string RunningPaths = AppDomain.CurrentDomain.BaseDirectory;
+            string FileNames = string.Format("{0}Resources\\userData.xml", Path.GetFullPath(Path.Combine(RunningPaths, @"..\..\")));
+            XmlDocument xmldocs = new XmlDocument();
+            xmldocs.Load(FileNames);
+            XmlNodeList itemsNodes = xmldocs.SelectNodes("//Usuarios//Usuario");
+            foreach (XmlNode ItemNode in itemsNodes)
             {
-                XmlDocument xmldoc = new XmlDocument();
-                xmldoc.Load(FileName);
-                XmlNodeList itemsNodes = xmldoc.SelectNodes("//Usuarios//Usuario");
-                foreach (XmlNode ItemNode in itemsNodes)
+                string USERNAME = string.Empty, PATHIMAGE = string.Empty;
+                foreach (XmlNode item in ItemNode.SelectSingleNode("USERNAME"))
                 {
-                    string USERNAME = string.Empty, PROFILEIMAGE = string.Empty;
-
-                    foreach (XmlNode item in ItemNode.SelectSingleNode("USERNAME"))
-                    {
-                        USERNAME = item.InnerText;
+                   USERNAME = item.InnerText;
+                   foreach (XmlNode items in ItemNode.SelectSingleNode("PROFILEIMAGE"))
+                   {
+                        PATHIMAGE = items.InnerText;
+                        if (Username == item.InnerText)
+                        {
+                            myUsersFeed.Add((USERNAME, PATHIMAGE));
+                        }
+                        myUsersFeed1.Add((USERNAME, PATHIMAGE));
                     }
-                    foreach (XmlNode item in ItemNode.SelectSingleNode("PROFILEIMAGE"))
-                    {
-                        PROFILEIMAGE = item.InnerText;
-                    }
-                    myUsersFeed.Add((USERNAME, PROFILEIMAGE));
                 }
             }
+
         }
         public void leerXMLFollowerFollowingData()
         {
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string FileName = string.Format("{0}Resources\\FollowerFollowingData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
 
-            string RunningPaths = AppDomain.CurrentDomain.BaseDirectory;
-            string FileNames = string.Format("{0}Resources\\userData.xml", Path.GetFullPath(Path.Combine(RunningPaths, @"..\..\")));
-
-            if (File.Exists(FileNames))
-            {
-                XmlDocument xmldocs = new XmlDocument();
-                xmldocs.Load(FileName);
-                XmlNodeList itemsNodess = xmldocs.SelectNodes("//Usuarios//Usuario");
-
             if (File.Exists(FileName))
             {
-                XmlDocument xmldoc = new XmlDocument();
-                xmldoc.Load(FileName);
-                XmlNodeList itemsNodes = xmldoc.SelectNodes("//FOLLOWINGFOLLOWERDATA//USER");
+            XmlDocument xmldoc = new XmlDocument();
+            xmldoc.Load(FileName);
+            XmlNodeList itemsNodes = xmldoc.SelectNodes("//FOLLOWINGFOLLOWERDATA//USER");
                 foreach (XmlNode ItemNode in itemsNodes)
                 {
                     string FOLLOWER = string.Empty, FOLLOWING = string.Empty;
-
                     foreach (XmlNode item in ItemNode.SelectSingleNode("FOLLOWER"))
                     {
                         if (Username == item.InnerText)
@@ -209,30 +200,13 @@ namespace instagramforce
                             FOLLOWER = item.InnerText;
                             foreach (XmlNode items in ItemNode.SelectSingleNode("FOLLOWING"))
                             {
-                                FOLLOWING = items.InnerText;
-                                    foreach (XmlNode ItemNodess in itemsNodess)
-                                    {
-                                        string USERNAME = string.Empty, PROFILEIMAGE = string.Empty;
+                            FOLLOWING = items.InnerText;
+                            myPreliminarList.Add((FOLLOWING));
 
-                                        foreach (XmlNode item1 in ItemNodess.SelectSingleNode("USERNAME"))
-                                        {
-                                            USERNAME = item.InnerText;
-                                        }
-                                        foreach (XmlNode item2 in ItemNodess.SelectSingleNode("PROFILEIMAGE"))
-                                        {
-                                            PROFILEIMAGE = item.InnerText;
-                                        }
-                                        if (FOLLOWING == USERNAME)
-                                        {
-                                        myPreliminarList.Add((FOLLOWING, PROFILEIMAGE));
-                                        }
-                                    }
-
-                                }
                             }
+                        }
                     }
                 }
-            }
             }
             llerXmlFeedData(); 
         }
@@ -254,13 +228,13 @@ namespace instagramforce
                     {
                         user = itemsNodes.Item(i);
                         string userNames = user.SelectSingleNode("USERNAME").InnerText;
-                        if (userNames == myPreliminarList[a].Item1)
+                        if (userNames == myPreliminarList[a])
                         {
                             string imagePost = user.SelectSingleNode("IMAGEPOST").InnerText;
                             string dataPost = user.SelectSingleNode("DATAPOST").InnerText;
                             string datePost = user.SelectSingleNode("DATEPOST").InnerText;
 
-                            myPostListUsers.Add((userNames, myPreliminarList[a].Item2, imagePost, dataPost, datePost));
+                            myPostListUsers.Add((userNames, imagePost, dataPost, datePost));
                         }
                     }
                 }
@@ -268,7 +242,13 @@ namespace instagramforce
             }
             foreach (var list in myPostListUsers)
             {
-                addNewPanelFeed(list.Item1, list.Item2, list.Item3, list.Item4);
+                foreach (var a in myUsersFeed1)
+                {
+                    if (list.Item1 == a.Item1)
+                    {
+                    addNewPanelFeed(list.Item1,list.Item2, list.Item3, list.Item4, a.Item2);
+                    }
+                }
             }
         }
 
@@ -287,7 +267,7 @@ namespace instagramforce
             this.Hide();
             feedApp.Visible = true;
         }
-        public void addNewPanelFeed(string userName, string imagePost, string dataPost, string datePost)
+        public void addNewPanelFeed(string userName, string imagePost, string dataPost, string datePost, string imageUserPost)
         {
             Panel panel1 = new Panel();
             PictureBox pictureBoxPost = new PictureBox();
@@ -297,6 +277,7 @@ namespace instagramforce
 
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string FileName = string.Format("{0}"+ imagePost+"", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+            string FileNameUser = string.Format("{0}"+ imageUserPost + "", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
 
             panel1.Size = new Size(506, 424);
             panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -322,6 +303,8 @@ namespace instagramforce
 
             pictureUserBox.Location = new Point(26, 358);
             pictureUserBox.BackColor = Color.Gray;
+            pictureUserBox.Image = Image.FromFile(FileNameUser);
+            pictureUserBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureUserBox.Size = new Size(50, 50);
             panel1.Controls.Add(pictureUserBox);
 
