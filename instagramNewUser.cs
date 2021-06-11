@@ -21,6 +21,9 @@ namespace instagramforce
         string passwordUser = "";
         string dateOfBirthUser = "";
         string pathImagenProfileUser = "";
+        string pathPostremp = "";
+        string pathFinalPostImage = "";
+
         Xml_acciones xml_acciones = new Xml_acciones();
         ArbolAVL NuevosUsuarios = new ArbolAVL();
         
@@ -132,7 +135,17 @@ namespace instagramforce
             {
                 photoProfileUser.Image = Image.FromFile(image.FileName);
                 pathImagenProfileUser = image.FileName;
+                if (pathImagenProfileUser.Contains("Resources"))
+                {
+                     pathPostremp = pathImagenProfileUser.Substring(pathImagenProfileUser.IndexOf("Resources"));
+                     pathFinalPostImage = pathPostremp;
+                }
+                else
+                {
+                    pathFinalPostImage = pathImagenProfileUser;
+                }
                 photoProfileUser.SizeMode = PictureBoxSizeMode.StretchImage;
+
             }
         }
 
@@ -150,19 +163,19 @@ namespace instagramforce
             passwordUser = txtPasswordUser.Text;
             dateOfBirthUser = gunaDateTimePicker1.Value.ToString("yyyy-MM-dd");
 
-            if (pathImagenProfileUser.Equals(""))
+            if (pathFinalPostImage.Equals(""))
             {
-                pathImagenProfileUser = "imageDefaultProfile.png";
+                pathFinalPostImage = "Assets\\imageDefaultProfile.png";
             }
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string FileName = string.Format("{0}Resources\\userData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
 
-            Nuevos_usuarios newUsers = new Nuevos_usuarios(nickNameUser, nameRealUser, passwordUser, pathImagenProfileUser, dateOfBirthUser);
+            Nuevos_usuarios newUsers = new Nuevos_usuarios(nickNameUser, nameRealUser, passwordUser, pathFinalPostImage, dateOfBirthUser);
 
             if (NuevosUsuarios.insertar(newUsers) == true)
             {
                 NuevosUsuarios.insertar(newUsers);
-                xml_acciones.Añadir_usuario(FileName, nickNameUser, nameRealUser, passwordUser, pathImagenProfileUser, dateOfBirthUser);
+                xml_acciones.Añadir_usuario(FileName, nickNameUser, nameRealUser, passwordUser, pathFinalPostImage, dateOfBirthUser);
                 MessageBox.Show("Bienvenido: " + nickNameUser);
                 instagramHome fHome = new instagramHome();
                 fHome.Username = nickNameUser;

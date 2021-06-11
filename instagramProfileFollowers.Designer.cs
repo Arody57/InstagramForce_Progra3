@@ -226,6 +226,7 @@ namespace instagramforce
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "instagramProfileFollowers";
             this.Load += new System.EventHandler(this.instagramProfileFollowers_Load);
+            this.Shown += new System.EventHandler(this.instagramProfileFollowers_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.imageUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

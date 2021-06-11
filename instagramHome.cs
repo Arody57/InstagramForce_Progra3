@@ -89,50 +89,7 @@ namespace instagramforce
             }
 
         }
-        private void gunaTextBox1_Enter(object sender, EventArgs e)
-        {
-
-            if (searchData.Equals(""))
-            {
-                gunaTextBox1.Text = "";
-                gunaTextBox1.ForeColor = Color.Black;
-            }
-            else
-            {
-                gunaTextBox1.Text = searchData;
-                gunaTextBox1.ForeColor = Color.Black;
-            }
-        }
-
-        private void gunaPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            gunaTextBox1.Text = "Busca";
-            gunaTextBox1.ForeColor = Color.Gray;
-        }
-
-        private void gunaTextBox1_Leave(object sender, EventArgs e)
-        {
-            searchData = gunaTextBox1.Text;
-            if (searchData.Equals("Busca"))
-            {
-                gunaTextBox1.Text = "Busca";
-                gunaTextBox1.ForeColor = Color.Gray;
-            }
-            else
-            {
-                if (searchData.Equals(""))
-                {
-                    gunaTextBox1.Text = "Busca";
-                    gunaTextBox1.ForeColor = Color.Gray;
-                }
-                else
-                {
-                    gunaTextBox1.Text = searchData;
-                    gunaTextBox1.ForeColor = Color.Black;
-                }
-            }
-        }
-
+        
         private void panelFeed_Paint(object sender, PaintEventArgs e)
         {
 
@@ -305,6 +262,7 @@ namespace instagramforce
         private void iconButton1_Click(object sender, EventArgs e)
         {
             instagramHome feedApp = new instagramHome();
+            feedApp.Username = Username;
             this.Hide();
             feedApp.Visible = true;
         }
@@ -355,9 +313,16 @@ namespace instagramforce
             Label lblUsers = (Label)sender;
             string user = lblUsers.Text;
             instagramProfileFollowers feedAp = new instagramProfileFollowers();
-            feedAp.perfilUser = user;
             feedAp.Username = Username;
+            feedAp.perfilUser = user;
+            feedAp.fullNameUser = fullNameUser;
+            feedAp.photoUserName = photoUserName;
+            feedAp.userBirthDate = userBirthDate;
+            feedAp.followersUser = followersUser;
+            feedAp.followingUser = followingUser;
+            feedAp.postUser = postUser;
             feedAp.Visible = true;
+            this.Hide();
         }
 
         public void addNewPanelFollowing(string pathImage, string nameFollowing)

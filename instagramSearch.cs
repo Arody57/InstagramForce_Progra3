@@ -19,8 +19,8 @@ namespace instagramforce
         public int panelFollowingsX = 16;
         public int countFollowings = 0;
         public int contador = 0;
-
         public string Username;
+        Busqueda_Usuario mandarTexto = new Busqueda_Usuario();
         public instagramSearch()
         {
             InitializeComponent();
@@ -35,10 +35,10 @@ namespace instagramforce
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            mandarTexto.Username = Username;
             limpiar_panel();
             if (!string.IsNullOrEmpty(txtSearch.Text))
             {
-                Busqueda_Usuario mandarTexto = new Busqueda_Usuario();
                 string value = txtSearch.Text;
                 List<string> listCoincidencias = mandarTexto.LoadingTxt(value);
                 foreach (var UserCoincidencias in listCoincidencias)

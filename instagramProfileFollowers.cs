@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using instagramforce.Clases.XML;
 
 namespace instagramforce
 {
@@ -29,9 +30,13 @@ namespace instagramforce
         public int x = 45;
         public int count = 1;
         public List<(string, string, string, string)> myPostListUsers = new List<(string, string, string, string)>();
+        Xml_acciones xml_seguidor = new Xml_acciones();
+        XmlDocument doc = new XmlDocument();
         public instagramProfileFollowers()
         {
             InitializeComponent();
+            bttDejardeSeguir.Enabled = false;
+            bttSeguir.Enabled = true;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -44,20 +49,62 @@ namespace instagramforce
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\FollowerFollowingData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+            xml_seguidor.Añadir_seguidor(FileName, Username, perfilUser);
+            MessageBox.Show("Empezaste a seguis a: @" + perfilUser);
+            bttSeguir.Enabled = false;
+            bttDejardeSeguir.Enabled = true;
         }
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\FollowerFollowingData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+            xml_seguidor.Deleteseguidor(FileName, Username, perfilUser);
+            MessageBox.Show("Dejaste de seguir a: @" + perfilUser);
+            bttSeguir.Enabled = true;
+            bttDejardeSeguir.Enabled = false;
         }
 
         private void instagramProfileFollowers_Load(object sender, EventArgs e)
         {
             lblUserName.Text = perfilUser;
-
-            //readXmlPostUser();
+            lblPost.Text = postUser;
+            lblSeguidores.Text = followersUser;
+            lblSeguidos.Text = followingUser;
+            readXmlPostUser();
         }
+
+        private void instagramProfileFollowers_Shown(object sender, EventArgs e)
+        {
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\FollowerFollowingData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+
+            doc.Load(FileName);
+
+            XmlNode Seguidores = doc.DocumentElement;
+
+            XmlNodeList listaSeguidores = doc.SelectNodes("FOLLOWINGFOLLOWERDATA/USER");
+
+            foreach (XmlNode item in listaSeguidores)
+            {
+                if (item.SelectSingleNode("FOLLOWER").InnerText == Username && item.SelectSingleNode("FOLLOWING").InnerText == perfilUser)
+                {
+                    bttSeguir.Enabled = false;
+                    bttDejardeSeguir.Enabled = true;
+                    break;
+                }
+                else
+                {
+                    bttSeguir.Enabled = true;
+                    bttDejardeSeguir.Enabled = false;
+                }
+            }
+            doc.Save(FileName);
+        }
+
+
         public void readXmlPostUser()
         {
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
@@ -100,5 +147,6 @@ namespace instagramforce
                 imageUser.Image = Image.FromFile(FileNames);
             }
         }
+
     }
 }

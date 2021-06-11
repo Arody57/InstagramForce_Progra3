@@ -1,57 +1,63 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Posts>
-   <Post>
-      <USERNAME>Prue1</USERNAME>
-      <IMAGEPOST>Resources\PhotoPost\4-pixelshuh-pixelart-oldskull.jpg</IMAGEPOST>
-      <DATAPOST>Prueba 2 Usuario 1</DATAPOST>
-      <DATEPOST>2021-06-09 10:08:11</DATEPOST>
-   </Post>
-   <Post>
-      <USERNAME>Prue1</USERNAME>
-      <IMAGEPOST>E:\Editadas\GoodPhotoFinal.jpg</IMAGEPOST>
-      <DATAPOST>Prueba 1 Usuario 1</DATAPOST>
-      <DATEPOST>2021-06-09 10:07:15</DATEPOST>
-   </Post>
-   <Post>
-      <USERNAME>SKING</USERNAME>
-      <IMAGEPOST>Resources\PhotoPost\0a62be7c6d866c3d4e87044d1f1dd9b1.png</IMAGEPOST>
-      <DATAPOST>Hola mundo</DATAPOST>
-      <DATEPOST>2021-06-09 05:59:13</DATEPOST>
-   </Post>
-   <Post>
-      <USERNAME>SKING</USERNAME>
-      <IMAGEPOST>Resources\PhotoPost\0a62be7c6d866c3d4e87044d1f1dd9b1.png</IMAGEPOST>
-      <DATAPOST>hOLA OTRA VEZ</DATAPOST>
-      <DATEPOST>2021-06-09 05:59:13</DATEPOST>
-   </Post>
-   <Post>
-      <USERNAME>AERRAZUR</USERNAME>
-      <IMAGEPOST>Resources\PhotoPost\pixel-art-paisaje-isometrico-arboles-puente-lago-mina-mineria-juego-bits_360488-13.jpg</IMAGEPOST>
-      <DATAPOST>The man well prepared for the fight has already achieved half a triumph.</DATAPOST>
-      <DATEPOST>2021-06-09 05:59:13</DATEPOST>
-   </Post>
-   <Post>
-      <USERNAME>AERRAZUR</USERNAME>
-      <IMAGEPOST>Resources\PhotoPost\Paisaje Pixel Art.png</IMAGEPOST>
-      <DATAPOST>Don't stay sit waiting for things to come to you. Fight for what you want, be responsible for yourself.</DATAPOST>
-      <DATEPOST>2021-06-09 05:59:13</DATEPOST>
-   </Post>
-   <Post>
-      <USERNAME>AERRAZUR</USERNAME>
-      <IMAGEPOST>Resources\PhotoPost\69e48b7763234137225115a0d1ca8899.png</IMAGEPOST>
-      <DATAPOST>The man well prepared for the fight has already achieved half a triumph.</DATAPOST>
-      <DATEPOST>2021-06-09 05:59:13</DATEPOST>
-   </Post>
-   <Post>
-      <USERNAME>AFRIPP</USERNAME>
-      <IMAGEPOST>Resources\PhotoPost\5943cd28b3a20b433870d7480320ff8a.jpg</IMAGEPOST>
-      <DATAPOST>Strength doesn't come from physical capacity but the will of the soul.</DATAPOST>
-      <DATEPOST>2021-06-09 05:59:13</DATEPOST>
-   </Post>
-   <Post>
-      <USERNAME>SVOLLMAN</USERNAME>
-      <IMAGEPOST>Resources\PhotoPost\anime-pixel-art-anime-girls-landscape-wallpaper-preview.jpg</IMAGEPOST>
-      <DATAPOST>Strength doesn't come from physical capacity but the will of the soul.</DATAPOST>
-      <DATEPOST>2021-06-09 05:59:13</DATEPOST>
-   </Post>
+  <Post>
+    <USERNAME>Usuario 5</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\5943cd28b3a20b433870d7480320ff8a.jpg</IMAGEPOST>
+    <DATAPOST>Prueba 2 Usuario 5</DATAPOST>
+    <DATEPOST>2021-06-11 03:10:58</DATEPOST>
+  </Post>
+  <Post>
+    <USERNAME>Usuario 5</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\92bbe8163fdf0bb7fb1d297bb75fdd52.jpg</IMAGEPOST>
+    <DATAPOST>Prueba 1 Usuario</DATAPOST>
+    <DATEPOST>2021-06-11 03:10:01</DATEPOST>
+  </Post>
+  <Post>
+    <USERNAME>Usuario 4</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\69e48b7763234137225115a0d1ca8899.png</IMAGEPOST>
+    <DATAPOST>Prueba  2 Usuario 4</DATAPOST>
+    <DATEPOST>2021-06-11 02:51:22</DATEPOST>
+  </Post>
+  <Post>
+    <USERNAME>Usuario 4</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\9-95460_s.jpg</IMAGEPOST>
+    <DATAPOST>Prueba 1 Usuario 4</DATAPOST>
+    <DATEPOST>2021-06-11 02:51:01</DATEPOST>
+  </Post>
+  <Post>
+    <USERNAME>Usuario 3</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\9-95447_vaporwave-aesthetic-scenery.png</IMAGEPOST>
+    <DATAPOST>Prueba 2 Usuario 3</DATAPOST>
+    <DATEPOST>2021-06-11 02:49:28</DATEPOST>
+  </Post>
+  <Post>
+    <USERNAME>Usuario 3</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\7d125f883a622ba60437a4d44df858fa.png</IMAGEPOST>
+    <DATAPOST>Prueba 1 Usuario 3</DATAPOST>
+    <DATEPOST>2021-06-11 02:48:58</DATEPOST>
+  </Post>
+  <Post>
+    <USERNAME>Usuario 2</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\07b01bb905d821617ed86b63f8988f1b.jpg</IMAGEPOST>
+    <DATAPOST>Prueba 2 Usuario 2</DATAPOST>
+    <DATEPOST>2021-06-11 02:47:13</DATEPOST>
+  </Post>
+  <Post>
+    <USERNAME>Usuario 2</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\5-pixelshuh-pixelart-oldskull.jpg</IMAGEPOST>
+    <DATAPOST>Prueba 1 Usuario 2</DATAPOST>
+    <DATEPOST>2021-06-11 02:46:51</DATEPOST>
+  </Post>
+  <Post>
+    <USERNAME>Usuario 1</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\4-pixelshuh-pixelart-oldskull.jpg</IMAGEPOST>
+    <DATAPOST>Usuario 1 Prueba 2</DATAPOST>
+    <DATEPOST>2021-06-11 02:44:49</DATEPOST>
+  </Post>
+  <Post>
+    <USERNAME>Usuario 1</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\0a62be7c6d866c3d4e87044d1f1dd9b1.png</IMAGEPOST>
+    <DATAPOST>Usuario 1 Prueba 1</DATAPOST>
+    <DATEPOST>2021-06-11 02:44:18</DATEPOST>
+  </Post>
 </Posts>

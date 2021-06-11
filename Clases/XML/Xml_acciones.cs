@@ -127,11 +127,11 @@ namespace instagramforce.Clases.XML
             return Usuario;
         }
 
-        public void Añadir_seguidor(string ruta, string follower, string Following)
+        public void Añadir_seguidor(string ruta, string seguidor, string seguido)
         {
             doc.Load(ruta);
 
-            XmlNode Usuario = Crear_seguidor(follower, Following);
+            XmlNode Usuario = Crear_seguidor(seguidor, seguido);
 
             XmlNode nodoRaiz = doc.DocumentElement;
 
@@ -140,19 +140,40 @@ namespace instagramforce.Clases.XML
             doc.Save(ruta);
         }
 
-        private XmlNode Crear_seguidor(string follower, string Following)
+        private XmlNode Crear_seguidor(string seguidor, string seguido)
         {
             XmlNode Usuario = doc.CreateElement("USER");
 
             XmlElement FOLLOWER = doc.CreateElement("FOLLOWER");
-            FOLLOWER.InnerText = follower;
+            FOLLOWER.InnerText = seguidor;
             Usuario.AppendChild(FOLLOWER);
 
             XmlElement FOLLOWING = doc.CreateElement("FOLLOWING");
-            FOLLOWING.InnerText = Following;
+            FOLLOWING.InnerText = seguido;
             Usuario.AppendChild(FOLLOWING);
 
             return Usuario;
+        }
+
+        public void Deleteseguidor( string ruta,string seguidor, string seguido)
+        {
+            doc.Load(ruta);
+
+            XmlNode Seguidores = doc.DocumentElement;
+
+            XmlNodeList listaSeguidores = doc.SelectNodes("FOLLOWINGFOLLOWERDATA/USER");
+
+            foreach (XmlNode item in listaSeguidores)
+            {
+
+                if (item.SelectSingleNode("FOLLOWER").InnerText == seguidor && item.SelectSingleNode("FOLLOWING").InnerText == seguido)
+                {
+
+                    XmlNode nodoOld = item;
+                    Seguidores.RemoveChild(nodoOld);
+                }
+            }
+            doc.Save(ruta);
         }
     }
 }
