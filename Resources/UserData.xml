@@ -1,40 +1,40 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Usuarios>
-  <Usuario>
-    <USERNAME>Prue1</USERNAME>
-    <FULLNAME>Daniel J</FULLNAME>
-    <PASSWORD>1234</PASSWORD>
-    <PROFILEIMAGE>imageDefaultProfile.png</PROFILEIMAGE>
-    <BIRTHDATE>2021-05-23</BIRTHDATE>
-  </Usuario>
-  <Usuario>
-    <USERNAME>SKING</USERNAME>
-    <FULLNAME>SKING</FULLNAME>
-    <PASSWORD>123</PASSWORD>
-    <PROFILEIMAGE>imageDefaultProfile.png</PROFILEIMAGE>
-    <BIRTHDATE>2021-04-25</BIRTHDATE>
-  </Usuario>
-  <Usuario>
-	<USERNAME>SVOLLMAN</USERNAME>
-	<FULLNAME>SVOLLMAN</FULLNAME>
-	<PASSWORD>1234</PASSWORD>
-	<PROFILEIMAGE>Resources\PhotoPost\0a62be7c6d866c3d4e87044d1f1dd9b1.png</PROFILEIMAGE>
-	<BIRTHDATE>2021-05-10</BIRTHDATE>
-  </Usuario>
-  <Usuario>
-	<USERNAME>PKAUFLIN</USERNAME>
-	<FULLNAME>PKAUFLIN</FULLNAME>
-	<PASSWORD>1234</PASSWORD>
-	<PROFILEIMAGE>Resources\PhotoPost\pixel-art-paisaje-isometrico-arboles-puente-lago-mina-mineria-juego-bits_360488-13.jpg</PROFILEIMAGE>
-	<BIRTHDATE>2021-05-10</BIRTHDATE>
-  </Usuario>
-  <Usuario>
-	<USERNAME>MWEISS</USERNAME>
-	<FULLNAME>MWEISS</FULLNAME>
-	<PASSWORD>1234</PASSWORD>
-	<PROFILEIMAGE>Resources\PhotoPost\pixel-art-31-amazing-examples-2.png</PROFILEIMAGE>
-	<BIRTHDATE>2021-05-10</BIRTHDATE>
-  </Usuario>
+	<Usuario>
+		<USERNAME>Prue1</USERNAME>
+		<FULLNAME>Daniel J</FULLNAME>
+		<PASSWORD>1234</PASSWORD>
+		<PROFILEIMAGE>imageDefaultProfile.png</PROFILEIMAGE>
+		<BIRTHDATE>2021-05-23</BIRTHDATE>
+	</Usuario>
+	<Usuario>
+		<USERNAME>SKING</USERNAME>
+		<FULLNAME>SKING</FULLNAME>
+		<PASSWORD>123</PASSWORD>
+		<PROFILEIMAGE>imageDefaultProfile.png</PROFILEIMAGE>
+		<BIRTHDATE>2021-04-25</BIRTHDATE>
+	</Usuario>
+	<Usuario>
+		<USERNAME>SVOLLMAN</USERNAME>
+		<FULLNAME>SVOLLMAN</FULLNAME>
+		<PASSWORD>1234</PASSWORD>
+		<PROFILEIMAGE>Resources\PhotoPost\0a62be7c6d866c3d4e87044d1f1dd9b1.png</PROFILEIMAGE>
+		<BIRTHDATE>2021-05-10</BIRTHDATE>
+	</Usuario>
+	<Usuario>
+		<USERNAME>PKAUFLIN</USERNAME>
+		<FULLNAME>PKAUFLIN</FULLNAME>
+		<PASSWORD>1234</PASSWORD>
+		<PROFILEIMAGE>Resources\PhotoPost\pixel-art-paisaje-isometrico-arboles-puente-lago-mina-mineria-juego-bits_360488-13.jpg</PROFILEIMAGE>
+		<BIRTHDATE>2021-05-10</BIRTHDATE>
+	</Usuario>
+	<Usuario>
+		<USERNAME>MWEISS</USERNAME>
+		<FULLNAME>MWEISS</FULLNAME>
+		<PASSWORD>1234</PASSWORD>
+		<PROFILEIMAGE>Resources\PhotoPost\pixel-art-31-amazing-examples-2.png</PROFILEIMAGE>
+		<BIRTHDATE>2021-05-10</BIRTHDATE>
+	</Usuario>
 	<Usuario>
 		<USERNAME>NKOCHHAR</USERNAME>
 		<FULLNAME>NKOCHHAR</FULLNAME>
@@ -48,42 +48,42 @@
 		<PASSWORD>1234</PASSWORD>
 		<PROFILEIMAGE>Resources\PhotoPost\pixel-art-31-amazing-examples-2.png</PROFILEIMAGE>
 		<BIRTHDATE>2021-05-10</BIRTHDATE>
-	</Usuario>		
+	</Usuario>
 	<Usuario>
 		<USERNAME>LDEHAAN</USERNAME>
 		<FULLNAME>LDEHAAN</FULLNAME>
 		<PASSWORD>1234</PASSWORD>
 		<PROFILEIMAGE>Resources\PhotoPost\pixel-art-31-amazing-examples-2.png</PROFILEIMAGE>
 		<BIRTHDATE>2021-05-10</BIRTHDATE>
-	</Usuario>		
+	</Usuario>
 	<Usuario>
 		<USERNAME>KPARTNER</USERNAME>
 		<FULLNAME>KPARTNER</FULLNAME>
 		<PASSWORD>1234</PASSWORD>
 		<PROFILEIMAGE>Resources\PhotoPost\pixel-art-31-amazing-examples-2.png</PROFILEIMAGE>
 		<BIRTHDATE>2021-05-10</BIRTHDATE>
-	</Usuario>		
+	</Usuario>
 	<Usuario>
 		<USERNAME>KMOURGOS</USERNAME>
 		<FULLNAME>KMOURGOS</FULLNAME>
 		<PASSWORD>1234</PASSWORD>
 		<PROFILEIMAGE>Resources\PhotoPost\pixel-art-31-amazing-examples-2.png</PROFILEIMAGE>
 		<BIRTHDATE>2021-05-10</BIRTHDATE>
-	</Usuario>	
+	</Usuario>
 	<Usuario>
 		<USERNAME>JRUSSEL</USERNAME>
 		<FULLNAME>JRUSSEL</FULLNAME>
 		<PASSWORD>1234</PASSWORD>
 		<PROFILEIMAGE>Resources\PhotoPost\pixel-art-31-amazing-examples-2.png</PROFILEIMAGE>
 		<BIRTHDATE>2021-05-10</BIRTHDATE>
-	</Usuario>	
+	</Usuario>
 	<Usuario>
 		<USERNAME>GCAMBRAU</USERNAME>
 		<FULLNAME>GCAMBRAU</FULLNAME>
 		<PASSWORD>1234</PASSWORD>
 		<PROFILEIMAGE>Resources\PhotoPost\pixel-art-31-amazing-examples-2.png</PROFILEIMAGE>
 		<BIRTHDATE>2021-05-10</BIRTHDATE>
-	</Usuario>		
+	</Usuario>
 	<Usuario>
 		<USERNAME>EZLOTKEY</USERNAME>
 		<FULLNAME>EZLOTKEY</FULLNAME>
@@ -97,19 +97,19 @@
 		<PASSWORD>1234</PASSWORD>
 		<PROFILEIMAGE>Resources\PhotoPost\pixel-art-31-amazing-examples-2.png</PROFILEIMAGE>
 		<BIRTHDATE>2021-05-10</BIRTHDATE>
-	</Usuario>		
+	</Usuario>
 	<Usuario>
 		<USERNAME>AFRIPP</USERNAME>
 		<FULLNAME>AFRIPP</FULLNAME>
 		<PASSWORD>1234</PASSWORD>
 		<PROFILEIMAGE>Resources\PhotoPost\pixel-art-31-amazing-examples-2.png</PROFILEIMAGE>
 		<BIRTHDATE>2021-05-10</BIRTHDATE>
-	</Usuario>	
+	</Usuario>
 	<Usuario>
 		<USERNAME>AERRAZUR</USERNAME>
 		<FULLNAME>AERRAZUR</FULLNAME>
 		<PASSWORD>1234</PASSWORD>
 		<PROFILEIMAGE>Resources\PhotoPost\pixel-art-31-amazing-examples-2.png</PROFILEIMAGE>
 		<BIRTHDATE>2021-05-10</BIRTHDATE>
-	</Usuario>	
+	</Usuario>
 </Usuarios>
