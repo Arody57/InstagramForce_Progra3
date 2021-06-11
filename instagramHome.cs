@@ -79,7 +79,7 @@ namespace instagramforce
             }
             else
             {
-                xml_acciones.crearXml(fileFollowerFollowing, "Usuarios");
+                xml_acciones.crearXml(fileFollowerFollowing, "FOLLOWINGFOLLOWERDATA");
             }
 
         }

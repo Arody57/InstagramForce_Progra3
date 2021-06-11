@@ -126,5 +126,33 @@ namespace instagramforce.Clases.XML
 
             return Usuario;
         }
+
+        public void Añadir_seguidor(string ruta, string follower, string Following)
+        {
+            doc.Load(ruta);
+
+            XmlNode Usuario = Crear_seguidor(follower, Following);
+
+            XmlNode nodoRaiz = doc.DocumentElement;
+
+            nodoRaiz.InsertBefore(Usuario, nodoRaiz.FirstChild);
+
+            doc.Save(ruta);
+        }
+
+        private XmlNode Crear_seguidor(string follower, string Following)
+        {
+            XmlNode Usuario = doc.CreateElement("USER");
+
+            XmlElement FOLLOWER = doc.CreateElement("FOLLOWER");
+            FOLLOWER.InnerText = follower;
+            Usuario.AppendChild(FOLLOWER);
+
+            XmlElement FOLLOWING = doc.CreateElement("FOLLOWING");
+            FOLLOWING.InnerText = Following;
+            Usuario.AppendChild(FOLLOWING);
+
+            return Usuario;
+        }
     }
 }
