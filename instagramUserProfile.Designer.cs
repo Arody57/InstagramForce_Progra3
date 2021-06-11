@@ -35,20 +35,19 @@ namespace instagramforce
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
+            this.lblSeguidos = new Guna.UI.WinForms.GunaLabel();
+            this.lblSeguidores = new Guna.UI.WinForms.GunaLabel();
+            this.lblPost = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.lblUserName = new Guna.UI.WinForms.GunaLabel();
             this.imageUser = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
+            this.panelFeedUser = new Guna.UI.WinForms.GunaPanel();
+            this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
+            this.gunaSeparator2 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageUser)).BeginInit();
-            this.gunaPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaElipse1
@@ -57,12 +56,13 @@ namespace instagramforce
             // 
             // gunaPanel1
             // 
+            this.gunaPanel1.Controls.Add(this.gunaSeparator1);
             this.gunaPanel1.Controls.Add(this.iconButton1);
             this.gunaPanel1.Controls.Add(this.iconButton2);
             this.gunaPanel1.Controls.Add(this.gunaButton1);
-            this.gunaPanel1.Controls.Add(this.gunaLabel6);
-            this.gunaPanel1.Controls.Add(this.gunaLabel5);
-            this.gunaPanel1.Controls.Add(this.gunaLabel4);
+            this.gunaPanel1.Controls.Add(this.lblSeguidos);
+            this.gunaPanel1.Controls.Add(this.lblSeguidores);
+            this.gunaPanel1.Controls.Add(this.lblPost);
             this.gunaPanel1.Controls.Add(this.gunaLabel3);
             this.gunaPanel1.Controls.Add(this.gunaLabel2);
             this.gunaPanel1.Controls.Add(this.gunaLabel1);
@@ -71,7 +71,7 @@ namespace instagramforce
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(658, 177);
+            this.gunaPanel1.Size = new System.Drawing.Size(649, 177);
             this.gunaPanel1.TabIndex = 0;
             this.gunaPanel1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.gunaPanel1_Scroll);
             this.gunaPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaPanel1_Paint);
@@ -130,41 +130,41 @@ namespace instagramforce
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
-            // gunaLabel6
+            // lblSeguidos
             // 
-            this.gunaLabel6.AutoSize = true;
-            this.gunaLabel6.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.gunaLabel6.Location = new System.Drawing.Point(413, 57);
-            this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(72, 13);
-            this.gunaLabel6.TabIndex = 7;
-            this.gunaLabel6.Text = "gunaLabel6";
+            this.lblSeguidos.AutoSize = true;
+            this.lblSeguidos.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.lblSeguidos.Location = new System.Drawing.Point(441, 57);
+            this.lblSeguidos.Name = "lblSeguidos";
+            this.lblSeguidos.Size = new System.Drawing.Size(14, 13);
+            this.lblSeguidos.TabIndex = 7;
+            this.lblSeguidos.Text = "1";
             // 
-            // gunaLabel5
+            // lblSeguidores
             // 
-            this.gunaLabel5.AutoSize = true;
-            this.gunaLabel5.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.gunaLabel5.Location = new System.Drawing.Point(323, 57);
-            this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(72, 13);
-            this.gunaLabel5.TabIndex = 6;
-            this.gunaLabel5.Text = "gunaLabel5";
+            this.lblSeguidores.AutoSize = true;
+            this.lblSeguidores.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.lblSeguidores.Location = new System.Drawing.Point(355, 57);
+            this.lblSeguidores.Name = "lblSeguidores";
+            this.lblSeguidores.Size = new System.Drawing.Size(14, 13);
+            this.lblSeguidores.TabIndex = 6;
+            this.lblSeguidores.Text = "1";
             // 
-            // gunaLabel4
+            // lblPost
             // 
-            this.gunaLabel4.AutoSize = true;
-            this.gunaLabel4.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.gunaLabel4.Location = new System.Drawing.Point(227, 57);
-            this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(72, 13);
-            this.gunaLabel4.TabIndex = 5;
-            this.gunaLabel4.Text = "gunaLabel4";
+            this.lblPost.AutoSize = true;
+            this.lblPost.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.lblPost.Location = new System.Drawing.Point(261, 57);
+            this.lblPost.Name = "lblPost";
+            this.lblPost.Size = new System.Drawing.Size(14, 13);
+            this.lblPost.TabIndex = 5;
+            this.lblPost.Text = "1";
             // 
             // gunaLabel3
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(413, 88);
+            this.gunaLabel3.Location = new System.Drawing.Point(423, 88);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(66, 13);
             this.gunaLabel3.TabIndex = 4;
@@ -184,7 +184,7 @@ namespace instagramforce
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(227, 88);
+            this.gunaLabel1.Location = new System.Drawing.Point(221, 88);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(96, 13);
             this.gunaLabel1.TabIndex = 2;
@@ -193,12 +193,11 @@ namespace instagramforce
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.lblUserName.Location = new System.Drawing.Point(26, 9);
+            this.lblUserName.Font = new System.Drawing.Font("Verdana", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(45, 12);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(72, 13);
+            this.lblUserName.Size = new System.Drawing.Size(0, 18);
             this.lblUserName.TabIndex = 1;
-            this.lblUserName.Text = "gunaLabel1";
             // 
             // imageUser
             // 
@@ -211,45 +210,46 @@ namespace instagramforce
             this.imageUser.TabStop = false;
             this.imageUser.UseTransfarantBackground = false;
             // 
-            // gunaPanel2
+            // panelFeedUser
             // 
-            this.gunaPanel2.AutoScroll = true;
-            this.gunaPanel2.Controls.Add(this.gunaPanel4);
-            this.gunaPanel2.Controls.Add(this.gunaPanel3);
-            this.gunaPanel2.Location = new System.Drawing.Point(12, 183);
-            this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(634, 328);
-            this.gunaPanel2.TabIndex = 1;
+            this.panelFeedUser.AutoScroll = true;
+            this.panelFeedUser.Location = new System.Drawing.Point(29, 183);
+            this.panelFeedUser.Name = "panelFeedUser";
+            this.panelFeedUser.Size = new System.Drawing.Size(606, 469);
+            this.panelFeedUser.TabIndex = 1;
             // 
-            // gunaPanel4
+            // gunaSeparator1
             // 
-            this.gunaPanel4.Location = new System.Drawing.Point(102, 337);
-            this.gunaPanel4.Name = "gunaPanel4";
-            this.gunaPanel4.Size = new System.Drawing.Size(431, 301);
-            this.gunaPanel4.TabIndex = 1;
+            this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
+            this.gunaSeparator1.Location = new System.Drawing.Point(12, 171);
+            this.gunaSeparator1.Name = "gunaSeparator1";
+            this.gunaSeparator1.Size = new System.Drawing.Size(625, 15);
+            this.gunaSeparator1.TabIndex = 16;
             // 
-            // gunaPanel3
+            // gunaSeparator2
             // 
-            this.gunaPanel3.Location = new System.Drawing.Point(102, 15);
-            this.gunaPanel3.Name = "gunaPanel3";
-            this.gunaPanel3.Size = new System.Drawing.Size(431, 301);
-            this.gunaPanel3.TabIndex = 0;
+            this.gunaSeparator2.LineColor = System.Drawing.Color.Silver;
+            this.gunaSeparator2.Location = new System.Drawing.Point(13, 161);
+            this.gunaSeparator2.Name = "gunaSeparator2";
+            this.gunaSeparator2.Size = new System.Drawing.Size(624, 20);
+            this.gunaSeparator2.TabIndex = 2;
             // 
             // instagramUserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 523);
-            this.Controls.Add(this.gunaPanel2);
+            this.ClientSize = new System.Drawing.Size(649, 664);
+            this.Controls.Add(this.gunaSeparator2);
+            this.Controls.Add(this.panelFeedUser);
             this.Controls.Add(this.gunaPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "instagramUserProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "instagramUserProfile";
+            this.Load += new System.EventHandler(this.instagramUserProfile_Load);
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageUser)).EndInit();
-            this.gunaPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -259,18 +259,18 @@ namespace instagramforce
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaButton gunaButton1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel6;
-        private Guna.UI.WinForms.GunaLabel gunaLabel5;
-        private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private Guna.UI.WinForms.GunaLabel lblSeguidos;
+        private Guna.UI.WinForms.GunaLabel lblSeguidores;
+        private Guna.UI.WinForms.GunaLabel lblPost;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaLabel lblUserName;
         private Guna.UI.WinForms.GunaCirclePictureBox imageUser;
-        private Guna.UI.WinForms.GunaPanel gunaPanel2;
-        private Guna.UI.WinForms.GunaPanel gunaPanel4;
-        private Guna.UI.WinForms.GunaPanel gunaPanel3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private Guna.UI.WinForms.GunaPanel panelFeedUser;
+        private Guna.UI.WinForms.GunaSeparator gunaSeparator1;
+        private Guna.UI.WinForms.GunaSeparator gunaSeparator2;
     }
 }

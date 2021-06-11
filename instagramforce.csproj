@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Acciones\drawingGeneralPanel.cs" />
     <Compile Include="Clases\Arbol AVL\ArbolAVL.cs" />
     <Compile Include="Clases\Arbol AVL\Comparador.cs" />
     <Compile Include="Clases\Arbol AVL\Logical.cs" />
