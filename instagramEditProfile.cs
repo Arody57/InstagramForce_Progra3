@@ -92,6 +92,7 @@ namespace instagramforce
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string FileName = string.Format("{0}Assets\\imageDefaultProfile.png", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
             photoProfileUser.Image = Image.FromFile(FileName);
+            txtNicknameUser.Text = Username;
         }
 
         private void gunaTextBox1_TextChanged(object sender, EventArgs e)

@@ -23,5 +23,6 @@ namespace instagramforce
             this.Hide();
             feedApp.Visible = true;
         }
+
     }
 }
