@@ -21,7 +21,7 @@ namespace instagramforce
         public string userBirthDate;
         public string followersUser;
         public string followingUser;
-        public string postUser;
+        public int postUser;
         public int y = 72;
         public int x = 45;
         public int count = 1;
@@ -48,7 +48,7 @@ namespace instagramforce
             feedApp.userBirthDate = userBirthDate;
             feedApp.followersUser = followersUser;
             feedApp.followingUser = followingUser;
-            feedApp.postUser = postUser;
+            feedApp.countPostUser = postUser;
             this.Hide();
             feedApp.Visible = true;
 
@@ -83,7 +83,7 @@ namespace instagramforce
             lblUserName.Text = Username;
             lblSeguidores.Text = followersUser;
             //lblSeguidos.Text = followingUser;
-            //lblPost.Text = postUser;
+            lblPost.Text = Convert.ToString(postUser);
             readXmlPostUser();
 
         }

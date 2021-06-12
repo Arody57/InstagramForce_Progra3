@@ -24,7 +24,6 @@ namespace instagramforce
         public string followingUser;
         public string postUser;
 
-
         public string perfilUser;
         public int y = 72;
         public int x = 45;
@@ -41,6 +40,7 @@ namespace instagramforce
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            
             instagramHome feedApp = new instagramHome();
             feedApp.Username = Username;
             this.Hide();

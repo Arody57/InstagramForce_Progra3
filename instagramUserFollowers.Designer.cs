@@ -32,9 +32,9 @@ namespace instagramforce
             this.components = new System.ComponentModel.Container();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.panelFeed = new Guna.UI.WinForms.GunaPanel();
             this.lblfollowers = new Guna.UI.WinForms.GunaLabel();
             this.backPage = new FontAwesome.Sharp.IconButton();
-            this.panelFeed = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,14 @@ namespace instagramforce
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(462, 561);
             this.gunaPanel1.TabIndex = 3;
+            // 
+            // panelFeed
+            // 
+            this.panelFeed.AutoScroll = true;
+            this.panelFeed.Location = new System.Drawing.Point(94, 76);
+            this.panelFeed.Name = "panelFeed";
+            this.panelFeed.Size = new System.Drawing.Size(328, 456);
+            this.panelFeed.TabIndex = 17;
             // 
             // lblfollowers
             // 
@@ -79,14 +87,6 @@ namespace instagramforce
             this.backPage.UseVisualStyleBackColor = true;
             this.backPage.Click += new System.EventHandler(this.backPage_Click);
             // 
-            // panelFeed
-            // 
-            this.panelFeed.AutoScroll = true;
-            this.panelFeed.Location = new System.Drawing.Point(50, 70);
-            this.panelFeed.Name = "panelFeed";
-            this.panelFeed.Size = new System.Drawing.Size(352, 462);
-            this.panelFeed.TabIndex = 17;
-            // 
             // instagramUserFollowers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,6 +97,7 @@ namespace instagramforce
             this.Name = "instagramUserFollowers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "instagramUserFollowers";
+            this.Load += new System.EventHandler(this.instagramUserFollowers_Load);
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel1.PerformLayout();
             this.ResumeLayout(false);

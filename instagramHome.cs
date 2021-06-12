@@ -24,9 +24,8 @@ namespace instagramforce
         public string userBirthDate;
         public string followersUser;
         public string followingUser;
-        public string postUser;
+        public int countPostUser = 0;
 
-        string searchData = "";
         public int y = 72;
         public int x = 56;
         public int count = 1;
@@ -193,6 +192,7 @@ namespace instagramforce
 
             lblFollowerrss.Text = Convert.ToString(myPreliminarList.Count);
             followersUser = Convert.ToString(myPreliminarList.Count);
+            countPost.Text = Convert.ToString(countPostUser);
             foreach (var lists in myUsersFeed1)
             {
                 foreach (var items in myPreliminarList)
@@ -229,6 +229,10 @@ namespace instagramforce
                             string datePost = user.SelectSingleNode("DATEPOST").InnerText;
 
                             myPostListUsers.Add((userNames, imagePost, dataPost, datePost));
+                            if (userNames == Username)
+                            {
+                                countPostUser += 1;
+                            }
                         }
                     }
                 }
@@ -255,7 +259,7 @@ namespace instagramforce
             feedApp.userBirthDate = userBirthDate;
             feedApp.followersUser = followersUser;
             feedApp.followingUser= followingUser;
-            feedApp.postUser= postUser;
+            feedApp.postUser= countPostUser;
             this.Hide();
             feedApp.Visible = true;
 
@@ -272,6 +276,7 @@ namespace instagramforce
             drawingGeneralPanel panels = new drawingGeneralPanel();
             Panel panelComponentes = panels.addNewPanelFeed( userName,  imagePost,  dataPost,  datePost,  imageUserPost,  x,  y);
             panelFeed.Controls.Add(panelComponentes);
+
             y = (424 * count) + 72;
             count += 1;
         }
@@ -326,7 +331,7 @@ namespace instagramforce
             feedAp.userBirthDate = userBirthDate;
             feedAp.followersUser = followersUser;
             feedAp.followingUser = followingUser;
-            feedAp.postUser = postUser;
+            feedAp.postUser = Convert.ToString(countPostUser);
             feedAp.Visible = true;
             this.Hide();
         }
@@ -377,7 +382,7 @@ namespace instagramforce
             feedApp.userBirthDate = userBirthDate;
             feedApp.followersUser = followersUser;
             feedApp.followingUser = followingUser;
-            feedApp.postUser = postUser;
+            feedApp.postUser = countPostUser; 
             this.Hide();
             feedApp.Visible = true;
         }
@@ -385,6 +390,8 @@ namespace instagramforce
         private void lblFollowers_Click(object sender, EventArgs e)
         {
             instagramUserFollowers feedApp = new instagramUserFollowers();
+            feedApp.myPreliminarList = myPreliminarList;
+            feedApp.userGlobal = Username;
             this.Hide();
             feedApp.Visible = true;
         }
@@ -403,17 +410,19 @@ namespace instagramforce
             feedApp.Visible = true;
         }
 
-        private void lblSeguidores_Click(object sender, EventArgs e)
-        {
-            instagramUserFollowers feedApp = new instagramUserFollowers();
-            this.Hide();
-            feedApp.Visible = true;
-        }
-
         private void bttSearch_Click(object sender, EventArgs e)
         {
             instagramSearch feedApp = new instagramSearch();
             feedApp.Username = Username;
+            this.Hide();
+            feedApp.Visible = true;
+        }
+
+        private void lblSeguidores_Click_1(object sender, EventArgs e)
+        {
+            instagramUserFollowers feedApp = new instagramUserFollowers();
+            feedApp.myPreliminarList = myPreliminarList;
+            feedApp.userGlobal = Username;
             this.Hide();
             feedApp.Visible = true;
         }
