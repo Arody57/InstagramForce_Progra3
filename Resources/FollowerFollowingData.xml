@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <FOLLOWINGFOLLOWERDATA>
   <USER>
+    <FOLLOWER>Usuario 6</FOLLOWER>
+    <FOLLOWING>Usuario 1</FOLLOWING>
+  </USER>
+  <USER>
     <FOLLOWER>Usuario 5</FOLLOWER>
     <FOLLOWING>Usuario 2</FOLLOWING>
   </USER>

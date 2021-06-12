@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Posts>
   <Post>
+    <USERNAME>Usuario 6</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\pixel-art-paisaje-isometrico-arboles-puente-lago-mina-mineria-juego-bits_360488-13.jpg</IMAGEPOST>
+    <DATAPOST>Prueba 1 Usuario 6</DATAPOST>
+    <DATEPOST>2021-06-11 11:26:07</DATEPOST>
+  </Post>
+  <Post>
     <USERNAME>Usuario 5</USERNAME>
     <IMAGEPOST>Resources\PhotoPost\5943cd28b3a20b433870d7480320ff8a.jpg</IMAGEPOST>
     <DATAPOST>Prueba 2 Usuario 5</DATAPOST>

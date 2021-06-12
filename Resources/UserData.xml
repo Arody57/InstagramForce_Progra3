@@ -35,4 +35,18 @@
     <PROFILEIMAGE>Resources\imageDefaultProfile.png</PROFILEIMAGE>
     <BIRTHDATE>2021-05-05</BIRTHDATE>
   </Usuario>
+  <Usuario>
+    <USERNAME>Usuario 6</USERNAME>
+    <FULLNAME>Daniel</FULLNAME>
+    <PASSWORD>1234</PASSWORD>
+    <PROFILEIMAGE>Resources\PerfilePhoto\66080678.png</PROFILEIMAGE>
+    <BIRTHDATE>2000-12-05</BIRTHDATE>
+  </Usuario>
+  <Usuario>
+    <USERNAME>Usuario 7</USERNAME>
+    <FULLNAME>Daniel</FULLNAME>
+    <PASSWORD>1234</PASSWORD>
+    <PROFILEIMAGE>Resources\PerfilePhoto\draw-a-personalized-pixel-art-avatar-of-you-in-my-style.png</PROFILEIMAGE>
+    <BIRTHDATE>2021-05-03</BIRTHDATE>
+  </Usuario>
 </Usuarios>

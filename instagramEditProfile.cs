@@ -53,14 +53,14 @@ namespace instagramforce
             nameRealUser = txtNameUser.Text;
             passwordUser = txtpasswordUser.Text;
             dateOfBirthUser = gunaDateTimePicker1.Value.ToString("yyyy-MM-dd");
-            if (pathImagenProfileUser.Equals(""))
+            if (pathFinalImagenProfileUser.Equals(""))
             {
-                pathImagenProfileUser = "Resources\\imageDefaultProfile.png";
+                pathFinalImagenProfileUser = "Resources\\imageDefaultProfile.png";
             }
 
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string FileName = string.Format("{0}Resources\\userData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
-            xml_acciones.UpdateXml(FileName, nickNameUser, nameRealUser, passwordUser, pathImagenProfileUser, dateOfBirthUser);
+            xml_acciones.UpdateXml(FileName, nickNameUser, nameRealUser, passwordUser, pathFinalImagenProfileUser, dateOfBirthUser);
             MessageBox.Show("Se ha actualizado la información del usuario: " + nickNameUser);
             backPage();
         }
