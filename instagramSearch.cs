@@ -29,6 +29,7 @@ namespace instagramforce
         private void backPage_Click(object sender, EventArgs e)
         {
             instagramHome feedApp = new instagramHome();
+            feedApp.Username = Username;
             this.Hide();
             feedApp.Visible = true;
         }
