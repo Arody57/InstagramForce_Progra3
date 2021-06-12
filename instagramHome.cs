@@ -427,5 +427,13 @@ namespace instagramforce
             this.Hide();
             feedApp.Visible = true;
         }
+
+        private void lblSeguidos_Click_1(object sender, EventArgs e)
+        {
+            instagramUserFollowing feedApp = new instagramUserFollowing();
+            feedApp.Username = Username;
+            this.Hide();
+            feedApp.Visible = true;
+        }
     }
 }
