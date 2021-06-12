@@ -188,6 +188,7 @@ namespace instagramforce
                     }
                 }
             }
+            myPreliminarList.Add(Username);
             llerXmlFeedData();
 
             lblFollowerrss.Text = Convert.ToString(myPreliminarList.Count);
@@ -277,36 +278,41 @@ namespace instagramforce
         }
         public void addNewPanelFollowers(string nameFollower, string pathImage)
         {
-            //Creacion de paneles para Seguidores
-            Panel panelFollowers = new Panel();
-            Guna.UI.WinForms.GunaCirclePictureBox pictureBoxFollowers = new Guna.UI.WinForms.GunaCirclePictureBox();
+            if(nameFollower != Username)
+            {
+
             
-            Label nameFollowers= new Label();
-            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
-            string FilePhoto = string.Format("{0}" + pathImage + "", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
-            //creacion del panel
-            panelFollowers.Size = new Size(234, 86);
-            panelFollowers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                //Creacion de paneles para Seguidores
+                Panel panelFollowers = new Panel();
+                Guna.UI.WinForms.GunaCirclePictureBox pictureBoxFollowers = new Guna.UI.WinForms.GunaCirclePictureBox();
+            
+                Label nameFollowers= new Label();
+                string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+                string FilePhoto = string.Format("{0}" + pathImage + "", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+                //creacion del panel
+                panelFollowers.Size = new Size(234, 86);
+                panelFollowers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
-            //Creacion del pictureBox
-            pictureBoxFollowers.Location = new Point(14, 12);
-            pictureBoxFollowers.Image = Image.FromFile(FilePhoto);
-            pictureBoxFollowers.Size = new Size(70, 63);
-            panelFollowers.Controls.Add(pictureBoxFollowers);
+                //Creacion del pictureBox
+                pictureBoxFollowers.Location = new Point(14, 12);
+                pictureBoxFollowers.Image = Image.FromFile(FilePhoto);
+                pictureBoxFollowers.Size = new Size(70, 63);
+                panelFollowers.Controls.Add(pictureBoxFollowers);
 
-            //Creacion de la label
-            nameFollowers.Location = new Point(89, 32);
-            nameFollowers.Text = nameFollower;
-            nameFollowers.Cursor = Cursors.Hand;
-            nameFollowers.Click += new EventHandler(lblEvent_Click);
-            nameFollowers.Size = new Size(68, 15);
-            panelFollowers.Controls.Add(nameFollowers);
+                //Creacion de la label
+                nameFollowers.Location = new Point(89, 32);
+                nameFollowers.Text = nameFollower;
+                nameFollowers.Cursor = Cursors.Hand;
+                nameFollowers.Click += new EventHandler(lblEvent_Click);
+                nameFollowers.Size = new Size(68, 15);
+                panelFollowers.Controls.Add(nameFollowers);
 
-            panelFollowers.Location = new Point(panelFollowersX, panelFollowersY);
-            panelFollowersHome.Controls.Add(panelFollowers);
+                panelFollowers.Location = new Point(panelFollowersX, panelFollowersY);
+                panelFollowersHome.Controls.Add(panelFollowers);
 
-            panelFollowersY = (86 * countPanelFollowers) + 7;
-            countPanelFollowers += 1;
+                panelFollowersY = (86 * countPanelFollowers) + 7;
+                countPanelFollowers += 1;
+            }
         }
 
         private void lblEvent_Click(object sender, EventArgs e)
