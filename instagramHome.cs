@@ -42,7 +42,10 @@ namespace instagramforce
         public List<(string, string, string, string)> myUsersFeed = new List<(string, string, string, string)>();
         public List<(string, string)> myUsersFeed1 = new List<(string, string)>();
         public List<string> myPreliminarList= new List<string>();
+        public List<string> myPreliminarListFollow= new List<string>();
         public List<( string, string, string,string)> myPostListUsers = new List<(string, string, string, string)>();
+
+        public int seguidos;
 
         public class User
         {
@@ -189,7 +192,7 @@ namespace instagramforce
             }
             myPreliminarList.Add(Username);
             llerXmlFeedData();
-
+            getFollowings();
             lblFollowerrss.Text = Convert.ToString(myPreliminarList.Count);
             followersUser = Convert.ToString(myPreliminarList.Count);
             countPost.Text = Convert.ToString(countPostUser);
@@ -200,6 +203,49 @@ namespace instagramforce
                     if (lists.Item1 == items)
                     {
                         addNewPanelFollowers(lists.Item1, lists.Item2);
+                    }
+                }
+            }
+        }
+        public void getFollowings()
+        {
+            //myUsersFeed1
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\FollowerFollowingData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+
+
+            if (File.Exists(FileName))
+            {
+                XmlDocument xmldoc = new XmlDocument();
+                xmldoc.Load(FileName);
+                XmlNodeList itemsNodes = xmldoc.SelectNodes("//FOLLOWINGFOLLOWERDATA//USER");
+                foreach (XmlNode ItemNode in itemsNodes)
+                {
+                    string FOLLOWER = string.Empty, FOLLOWING = string.Empty;
+                    foreach (XmlNode item in ItemNode.SelectSingleNode("FOLLOWER"))
+                    {
+                        FOLLOWER = item.InnerText;
+                        foreach (XmlNode items in ItemNode.SelectSingleNode("FOLLOWING"))
+                        {
+                            FOLLOWING = item.InnerText;
+                            if (Username == items.InnerText)
+                            {
+                                myPreliminarListFollow.Add((FOLLOWER));
+                                seguidos += 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            foreach (var lists in myUsersFeed1)
+            {
+                foreach (var items in myPreliminarListFollow)
+                {
+                    if (lists.Item1 == items)
+                    {
+                        addNewPanelFollowing(lists.Item1, lists.Item2);
                     }
                 }
             }
@@ -337,11 +383,12 @@ namespace instagramforce
             this.Hide();
         }
 
-        public void addNewPanelFollowing(string pathImage, string nameFollowing)
+        public void addNewPanelFollowing(string nameFollowing, string pathImage)
         {
             Panel panelFollowers = new Panel();
             Guna.UI.WinForms.GunaCirclePictureBox pictureBoxFollowers = new Guna.UI.WinForms.GunaCirclePictureBox();
-            
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FilePhoto = string.Format("{0}" + pathImage + "", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
             Label nameFollowers= new Label();
 
             //creacion del panel
@@ -350,13 +397,15 @@ namespace instagramforce
 
             //Creacion del pictureBox
             pictureBoxFollowers.Location = new Point(14, 12);
+            pictureBoxFollowers.Image = Image.FromFile(FilePhoto);
             pictureBoxFollowers.Size = new Size(70, 63);
             panelFollowers.Controls.Add(pictureBoxFollowers);
 
             //Creacion de la label
             nameFollowers.Location = new Point(89, 32);
-            nameFollowers.Text = "PRUEBA USUARIO";
+            nameFollowers.Text = nameFollowing;
             nameFollowers.Cursor = Cursors.Hand;
+            nameFollowers.Click += new EventHandler(lblEvent_Click);
             nameFollowers.Size = new Size(68, 15);
             panelFollowers.Controls.Add(nameFollowers);
 
