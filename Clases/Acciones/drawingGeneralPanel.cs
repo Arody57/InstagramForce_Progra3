@@ -11,6 +11,7 @@ namespace instagramforce.Clases.Acciones
 {
     class drawingGeneralPanel
     {
+        public string Username { get; set; }
         public  Panel addNewPanelFeed(string userName, string imagePost, string dataPost, string datePost, string imageUserPost, int x, int y)
         {
             Panel panel1 = new Panel();
@@ -64,6 +65,7 @@ namespace instagramforce.Clases.Acciones
             string user = lblUser.Text;
             instagramProfileFollowers feedAp = new instagramProfileFollowers();
             feedAp.perfilUser = user;
+            feedAp.Username = Username;
             feedAp.Visible = true;
         }
     }

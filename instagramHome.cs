@@ -269,6 +269,7 @@ namespace instagramforce
         public void addNewPanelFeeds(string userName, string imagePost, string dataPost, string datePost, string imageUserPost)
         {
             drawingGeneralPanel panels = new drawingGeneralPanel();
+            panels.Username= Username;
             Panel panelComponentes = panels.addNewPanelFeed( userName,  imagePost,  dataPost,  datePost,  imageUserPost,  x,  y);
             panelFeed.Controls.Add(panelComponentes);
             y = (424 * count) + 72;
