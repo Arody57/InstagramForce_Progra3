@@ -17,7 +17,7 @@ namespace instagramforce
     {
         public int panelFollowingsY = 7;
         public int panelFollowingsX = 16;
-        public int countFollowings = 0;
+        public int countFollowings = 1;
         public int contador = 0;
         public string Username;
         Busqueda_Usuario mandarTexto = new Busqueda_Usuario();
@@ -29,6 +29,7 @@ namespace instagramforce
         private void backPage_Click(object sender, EventArgs e)
         {
             instagramHome feedApp = new instagramHome();
+            feedApp.Username = Username;
             this.Hide();
             feedApp.Visible = true;
         }
@@ -52,7 +53,7 @@ namespace instagramforce
         private void limpiar_panel() 
         {
             panelFeed.Controls.Clear();
-            countFollowings = 0;
+            countFollowings = 1;
             panelFollowingsY = 7;
             panelFollowingsX = 16;
             panelFeed.Refresh();
@@ -105,7 +106,6 @@ namespace instagramforce
         {
             Panel panelSearch = new Panel();
             Guna.UI.WinForms.GunaCirclePictureBox pictureBoxFollowers = new Guna.UI.WinForms.GunaCirclePictureBox();
-
 
             Label nameFollowers = new Label();
             //LinkLabel nameFollowers = new LinkLabel();

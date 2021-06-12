@@ -2,6 +2,30 @@
 <FOLLOWINGFOLLOWERDATA>
   <USER>
     <FOLLOWER>Usuario 5</FOLLOWER>
+    <FOLLOWING>Usuario 2</FOLLOWING>
+  </USER>
+  <USER>
+    <FOLLOWER>Usuario 4</FOLLOWER>
+    <FOLLOWING>Usuario 2</FOLLOWING>
+  </USER>
+  <USER>
+    <FOLLOWER>Usuario 3</FOLLOWER>
+    <FOLLOWING>Usuario 2</FOLLOWING>
+  </USER>
+  <USER>
+    <FOLLOWER>Usuario 1</FOLLOWER>
+    <FOLLOWING>Usuario 5</FOLLOWING>
+  </USER>
+  <USER>
+    <FOLLOWER>Usuario 1</FOLLOWER>
+    <FOLLOWING>Usuario 4</FOLLOWING>
+  </USER>
+  <USER>
+    <FOLLOWER>Usuario 1</FOLLOWER>
+    <FOLLOWING>Usuario 2</FOLLOWING>
+  </USER>
+  <USER>
+    <FOLLOWER>Usuario 5</FOLLOWER>
     <FOLLOWING>Usuario 1</FOLLOWING>
   </USER>
   <USER>
