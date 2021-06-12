@@ -202,6 +202,7 @@ namespace instagramforce
             this.lblSeguidos.Size = new System.Drawing.Size(66, 13);
             this.lblSeguidos.TabIndex = 11;
             this.lblSeguidos.Text = "Seguidos";
+            this.lblSeguidos.Click += new System.EventHandler(this.lblSeguidos_Click_1);
             // 
             // gunaPanel3
             // 
