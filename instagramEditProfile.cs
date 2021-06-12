@@ -33,7 +33,6 @@ namespace instagramforce
             InitializeComponent();
             txtNicknameUser.Text = Username;
             txtNicknameUser.ForeColor = Color.Gray;
-            iconButton2.Enabled = false;
         }
 
         public void backPage()
@@ -56,7 +55,7 @@ namespace instagramforce
             dateOfBirthUser = gunaDateTimePicker1.Value.ToString("yyyy-MM-dd");
             if (pathImagenProfileUser.Equals(""))
             {
-                pathImagenProfileUser = "imageDefaultProfile.png";
+                pathImagenProfileUser = "Resources\\imageDefaultProfile.png";
             }
 
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
@@ -90,9 +89,46 @@ namespace instagramforce
         {
             //Validar para que cargue la foto del usuario
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
-            string FileName = string.Format("{0}Assets\\imageDefaultProfile.png", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
-            photoProfileUser.Image = Image.FromFile(FileName);
+            string FileName = string.Format("{0}Resources\\userData.xml", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+            XmlDocument xmldoc = new XmlDocument();
+            xmldoc.Load(FileName);
+            XmlElement Usuario = xmldoc.DocumentElement;
+            XmlNodeList listaUsuarios = xmldoc.SelectNodes("Usuarios/Usuario");
+            string FULLNAME = "";
+            string PASSWORD = "";
+            string PROFILEIMAGE = "";
+            foreach (XmlNode item in listaUsuarios)
+            {
+                if (item.FirstChild.InnerText == Username)
+                {
+                    foreach (XmlNode itemF in item.SelectSingleNode("FULLNAME"))
+                    {
+                        FULLNAME = itemF.InnerText;
+                    }
+                    foreach (XmlNode itemF in item.SelectSingleNode("PASSWORD"))
+                    {
+                        PASSWORD = itemF.InnerText;
+                    }
+                    foreach (XmlNode itemF in item.SelectSingleNode("PROFILEIMAGE"))
+                    {
+                        PROFILEIMAGE = itemF.InnerText;
+                    }
+                }
+            }
+            string PROFILEIMAGEPAHT;
             txtNicknameUser.Text = Username;
+            txtNameUser.Text = FULLNAME;
+            txtpasswordUser.Text = PASSWORD;
+            if (PROFILEIMAGE.Contains("Resources"))
+            {
+                PROFILEIMAGEPAHT = string.Format(Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+                PROFILEIMAGEPAHT += PROFILEIMAGE;
+            }
+            else
+            {
+                PROFILEIMAGEPAHT = PROFILEIMAGE;
+            }
+            photoProfileUser.Image = Image.FromFile(PROFILEIMAGEPAHT);
         }
 
         private void gunaTextBox1_TextChanged(object sender, EventArgs e)
