@@ -1,6 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Posts>
   <Post>
+    <USERNAME>Usuario 1</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\f1f5fb8920a5d9cc873cc78d8b43a621.jpg</IMAGEPOST>
+    <DATAPOST>Prueba 3 Usuario 1</DATAPOST>
+    <DATEPOST>2021-06-12 12:27:54</DATEPOST>
+  </Post>
+  <Post>
+    <USERNAME>Usuario 8</USERNAME>
+    <IMAGEPOST>Resources\PhotoPost\pixels-pixel-art-pixelated-cityscape-wallpaper-preview.jpg</IMAGEPOST>
+    <DATAPOST>Prueba 1 Usario 8</DATAPOST>
+    <DATEPOST>2021-06-11 11:40:11</DATEPOST>
+  </Post>
+  <Post>
     <USERNAME>Usuario 6</USERNAME>
     <IMAGEPOST>Resources\PhotoPost\pixel-art-paisaje-isometrico-arboles-puente-lago-mina-mineria-juego-bits_360488-13.jpg</IMAGEPOST>
     <DATAPOST>Prueba 1 Usuario 6</DATAPOST>
